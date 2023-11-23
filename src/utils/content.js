@@ -61,3 +61,54 @@ export const specialist = [
         para : "It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
     },
 ]
+
+export const footerContent = {
+    sale : "SALE UP TO 70% OFF FOR ALL CLOTHES & FASHION ITEMS, ON ALL BRANDS.",
+    look : "The best look anytime, anywhere.",
+    subs : "subscribe",
+    copyrgt : "Copyright © 2023 Brandstore. Powered by Brandstore.",
+}
+
+export const footerList = [
+    {
+        heading : "for her",
+        list : [
+            {
+                name : "women jeans"
+            },
+            {
+                name : "tops and shirts"
+            },
+            {
+                name : "women jackets"
+            },
+            {
+                name : "heels and facts"
+            },
+            {
+                name : "women accessories"
+            }
+        ]
+    },
+    {
+        heading : "for him",
+        list : [
+            {
+                name : "men jeans"
+            },
+            {
+                name : "men shirts"
+            },
+            {
+                name : "men jackets"
+            },
+            {
+                name : "men shoes"
+            },
+            {
+                name : "women accessories"
+            }
+        ]
+
+    }
+]

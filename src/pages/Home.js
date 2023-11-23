@@ -4,8 +4,8 @@ import HomeSection1 from "../components/HomeSection1";
 import Product from "../components/Product";
 import Specialist from "../components/Specialist";
 import { navContent,homeSection1 ,featured , limited_edition ,specialist } from "../utils/content";
-
 import axios from "axios";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const [product, setProduct] = useState("");
@@ -100,13 +100,7 @@ export default function Home() {
         </div>
       </div>
       <hr/>
-      <footer className="footer">
-        <h3>
-
-        </h3>
-
-      </footer>
-
+      <Footer />
     </div>
   );
 }

@@ -265,8 +265,36 @@
 }
 .footer{
     margin: 0rem 15.9rem;
+    padding-top: 2rem;
 }
 .brand_logo{
     width: 14rem;
     height: 4.7rem;
+}
+.brand_logo_02{
+    width: 9rem;
+    height: 3rem;
+}
+.footer h3{
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #000;
+    height: 10rem;
+    margin-bottom: 2rem;
+}
+.mid_part{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 5.5rem 0rem 10rem;
+
+}
+
+.brand_title h4{
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #000;
+    justify-content: flex-end;
+    margin-top: 3rem;
 }
