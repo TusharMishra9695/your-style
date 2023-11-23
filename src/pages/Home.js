@@ -1,29 +1,28 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { navContent } from "../utils/content";
 import HomeSection1 from "../components/HomeSection1";
 import Product from "../components/Product";
-import { homeSection1 } from "../utils/content";
-import { featured } from "../utils/content";
+import Specialist from "../components/Specialist";
+import { navContent,homeSection1 ,featured , limited_edition ,specialist } from "../utils/content";
+
 import axios from "axios";
 
 export default function Home() {
   const [product, setProduct] = useState("");
   useEffect(() => {
     if (!product) {
-      axios.get("https://dummyjson.com/products").then((res) => {
-        setProduct(res.data.products);
-        console.log(res.data.products, "res");
+      axios.get("https://fakestoreapi.com/products").then((res) => {
+        setProduct(res.data);
+        console.log(res.data, "res");
       });
     }
   }, []);
-  if(!product)
-  return null;
+  if (!product) return null;
   return (
     <div className="home_p1">
       <div className="home_p2">
         <div className="child1_p2">
-          {/* <img src="../../public/imgfiles/logo1-free-img.png" alt="" /> */}
+          <img src="/imgfiles/logo1-free-img.png" alt="" className="brand_logo" /> 
           <ul className="CHILD1_P2_ul">
             <li>
               <Link className="CHILD1_P2_D1_A cursor">
@@ -79,11 +78,35 @@ export default function Home() {
           <h1>{featured.name}</h1>
         </div>
         <div className="product_img">
-          {product.slice(0,10).map((item, index) => {
+          {product.slice(0, 10).map((item, index) => {
             return <Product key={index} item={item} />;
           })}
         </div>
       </div>
+      <div className="limited_edition">
+        <div className="bg_img">
+          <div className="inside_bg_img">
+            <h4>{limited_edition.limited}</h4>
+            <h2>{limited_edition.special}</h2>
+            <p>{limited_edition.detail}</p>
+            <h4>{limited_edition.topic}</h4>
+            <span className="sec01_btn cursor">{limited_edition.btn}</span>
+          </div>
+        </div>
+        <div className="specialist">
+          {specialist.map((items,index)=>{
+            return(<Specialist key={index} item={items}/>)
+          })}
+        </div>
+      </div>
+      <hr/>
+      <footer className="footer">
+        <h3>
+
+        </h3>
+
+      </footer>
+
     </div>
   );
 }
