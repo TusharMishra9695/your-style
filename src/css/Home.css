@@ -5,6 +5,7 @@
     background-repeat: no-repeat;
     /* height: 71.9rem; */
     background-attachment: fixed;
+    width:auto;
 }
 .child1_p2{
     width: 100%;
@@ -88,10 +89,10 @@
     border: 1px solid #FFF;
 }
 .home_section1{
-    padding:12rem 18rem 20rem;
+    padding:12rem 16rem 20rem;
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 .section_img{
     width: 37.334rem;
@@ -354,4 +355,8 @@
 }
 .footer_listing{
     flex-grow: 2;
+}
+
+.inside_img{
+    width: 39.4rem;
 }
