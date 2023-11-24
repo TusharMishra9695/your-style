@@ -33,6 +33,8 @@
     font-weight: 500;
     color: #F5F7F9;
     padding: 0 1.44rem;
+    text-transform: uppercase;
+
 
 }
 .CHILD2_P2_D1_A{
@@ -41,7 +43,7 @@
     font-weight: 400;
     color: #F5F7F9;
     padding: 0 1.3rem;
-
+    text-transform: uppercase;
 }
 .home_p3{
     display: flex;
@@ -86,15 +88,270 @@
     border: 1px solid #FFF;
 }
 .home_section1{
-    padding:12rem 18rem;
+    padding:12rem 18rem 20rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 .section_img{
     width: 37.334rem;
     height: 48rem;
-    
+    margin-right: 2rem;
 }
-.inside_img{
+.sec01_para{
+    font-size: 2.6rem;
+    font-weight: 500;
+    font-family: sans-serif;
+    color: #FFF;
+    margin-bottom: 1rem;
+
 }
-.img_text{
-    /* margin-top:-50px; */
+.pack_content{
+    margin-left: 4rem;
+    margin-top: -20rem;
+
+}
+.sec01_content{
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: sans-serif;
+    color: #FFF;
+    margin-bottom: 4rem;
+
+}
+.sec01_btn{
+    padding: 1.6rem 2.8rem;
+    text-transform: uppercase;
+    background-color: #F5F7F9;
+    font-weight: 600;
+    font-family: sans-serif;
+    color: #000;
+    font-size: 1.4rem;
+}
+.sec01_btn:hover{
+    background-color: #000;
+    color: #F5F7F9;
+}
+.featured_products{
+    padding: 10rem 10rem;
+    background-color: #F5F7F9
+}
+.featured_products .inside_pro h1{
+    font-size: 4.1rem;
+    color: #000;
+    font-weight: 600;
+    font-family: sans-serif;
+    border-width: 2rem;
+    text-transform: capitalize;
+    margin : 0rem 0rem 5rem;
+}
+.pro_img{
+    width: 24.8rem;
+    height: 24.8rem;
+    margin-bottom: 1.3rem;
+    margin-right: 1.5rem;
+    border-radius: 4px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.inside_pro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.prod h2{
+    font-size: 1.6rem;
+    font-family: sans-serif;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 1rem;
+    width: 24.8rem;
+
+}
+.prod h4{
+    font-size: 1.4rem;
+    font-family: sans-serif;
+    font-weight: 400;
+    color: #333;
+    opacity: 0.7;
+    margin-bottom: 0.7rem;
+}
+.prod span{
+    font-size: 1.45rem;
+    font-family: sans-serif;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 0.72rem;
+}
+.extra_prod{
+    opacity: 0.8;
+    text-decoration: line-through;
+}
+.product_img{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.prod{
+    margin-bottom: 5rem;
+}
+.limited_edition{
+    padding: 5rem 7rem;
+    background-color: #F5F7F9
+
+}
+.bg_img{
+    background-image: url("../../public/imgfiles/banner-03.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+.inside_bg_img{
+    padding: 10rem 10rem;
+    width: 60%;
+}
+.inside_bg_img h2{
+    margin-bottom: 1rem;
+    font-size: 4.2rem;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #FFF;
+
+}
+.inside_bg_img p{
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    font-family: sans-serif;
+    font-weight: 500;
+    color: #FFF;
+
+}
+.inside_bg_img h4{
+    font-size: 2rem;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #FFF;
+    margin-bottom: 2rem;
+}
+.specialist{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 10.5rem 0rem 5rem;
+}
+.inside_specialist{
+    padding: 2rem;
+    height: 20.5rem;
+    width: 30rem;
+    text-align: center;
+}
+.inside_specialist_img{
+    height: 5.2rem;
+    width: 5.2rem;
+    margin-bottom: 2rem;
+
+}
+.inside_specialist h5{
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 1.2rem;
+}
+.inside_specialist p{
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #333;
+    margin: auto;
+}
+.footer{
+    margin: 0rem 15.9rem;
+    padding-top: 2rem;
+}
+.brand_logo{
+    width: 14rem;
+    height: 4.7rem;
+}
+.brand_logo_02{
+    width: 9rem;
+    height: 3rem;
+}
+.footer h3{
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #000;
+    height: 10rem;
+    margin-bottom: 2rem;
+}
+.mid_part{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 5.5rem 0rem 10rem;
+
+}
+.brand_title{
+    flex-grow: 1;
+}
+
+.brand_title h4{
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #000;
+    justify-content: flex-end;
+    margin-top: 3rem;
+
+}
+
+.subs h2{
+    font-size: 2.3rem;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 1.5rem;
+    text-transform: capitalize;
+}
+.subs button{
+    padding: 1.6rem 2.7rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #FFF;
+    background-color: #0084D6;
+    text-transform: uppercase;
+    border: none;
+}
+.inside_subs{
+    padding: 1rem 0rem 2rem;
+
+}
+.inside_subs input{
+    height: 4.5rem;
+    width: 23rem;
+    padding: 1.2rem;
+    border: 1px solid lightgray;
+}
+.inside_subs input::placeholder{
+    font-size: 1.6rem;
+    color:#757575;
+    font-weight: 400;
+
+}
+.footer_listing h2{
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 1.6rem;
+    text-transform: capitalize;
+}
+.footer_listing ul li{
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin: 1rem 0rem;
+    color:#757575;
+
+
+}
+.footer_listing{
+    flex-grow: 2;
 }
