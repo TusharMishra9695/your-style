@@ -143,6 +143,7 @@
     font-family: sans-serif;
     border-width: 2rem;
     text-transform: capitalize;
+    margin : 0rem 0rem 5rem;
 }
 .pro_img{
     width: 24.8rem;
@@ -290,6 +291,9 @@
     padding: 5.5rem 0rem 10rem;
 
 }
+.brand_title{
+    flex-grow: 1;
+}
 
 .brand_title h4{
     font-size: 2.2rem;
@@ -297,4 +301,57 @@
     color: #000;
     justify-content: flex-end;
     margin-top: 3rem;
+
+}
+
+.subs h2{
+    font-size: 2.3rem;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 1.5rem;
+    text-transform: capitalize;
+}
+.subs button{
+    padding: 1.6rem 2.7rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #FFF;
+    background-color: #0084D6;
+    text-transform: uppercase;
+    border: none;
+}
+.inside_subs{
+    padding: 1rem 0rem 2rem;
+
+}
+.inside_subs input{
+    height: 4.5rem;
+    width: 23rem;
+    padding: 1.2rem;
+    border: 1px solid lightgray;
+}
+.inside_subs input::placeholder{
+    font-size: 1.6rem;
+    color:#757575;
+    font-weight: 400;
+
+}
+.footer_listing h2{
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 1.6rem;
+    text-transform: capitalize;
+}
+.footer_listing ul li{
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin: 1rem 0rem;
+    color:#757575;
+
+
+}
+.footer_listing{
+    flex-grow: 2;
 }

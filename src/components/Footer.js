@@ -1,5 +1,5 @@
 import React from 'react'
-import { footerContent } from '../utils/content'
+import { footerContent,footerList } from '../utils/content'
 export default function Footer() {
   return (
     <footer>
@@ -18,22 +18,29 @@ export default function Footer() {
             {footerContent.look}
         </h4>
     </div>
-    <div>
-
-    </div>
-    <div>
-
-    </div>
+    {footerList.map((items,index)=>{
+      const { heading,list} = items
+      return(<div key={index} className='footer_listing'>
+        <h2> {heading}</h2>
+        <ul>
+          {list.map((item,id)=>{
+            return(<li key={id}>
+              {item.name}
+            </li>)
+          })}
+        </ul>
+       
+      </div>)
+    })}
     <div className='subs'>
         <h2>{footerContent.subs}
         </h2>
+        <div className='inside_subs'>
         <input type="email" name="email" id="" placeholder='Your email address...' />
-        <span>{footerContent.subs}</span>
+        </div>
+  
+        <button>{footerContent.subs}</button>
     </div>
-
-  </div>
-  <hr/>
-  <div className='footer end_part'>
 
   </div>
   </footer>
