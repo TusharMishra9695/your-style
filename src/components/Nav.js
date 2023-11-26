@@ -2,6 +2,8 @@ import React,{useState} from "react";
 import { Link } from "react-router-dom";
 import { navContent } from "../utils/content";
 import { RiUser3Fill } from "react-icons/ri";
+import Login from "./Login";
+import "../css/Login.css"
 
 export default function Nav() {
   const [showlog,setshowlog] = useState(false)
@@ -35,9 +37,11 @@ export default function Nav() {
           <Link className="CHILD2_P2_D1_A cursor">{navContent.price}</Link>
         </li>
         <li>
-            <RiUser3Fill  className="user_icon"/>
+            <RiUser3Fill  className="user_icon" onClick={() => setshowlog(true)}/>
         </li>
       </ul>
+      {showlog ? <Login /> : null}
+
     </div>
   );
 }

@@ -5,3 +5,4 @@ export default function Accessories() {
     <div>Accessories</div>
   )
 }
+
