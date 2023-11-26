@@ -1,0 +1,35 @@
+.login_model{
+    height: 60rem;
+    width: 60rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 10rem 10rem;
+    justify-content: flex-end;
+    margin-right: -3.5rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+}
+.inside_login input{
+    height: 4.5rem;
+    width: 23rem;
+    padding: 1.2rem;
+    border: 1px solid lightgray;
+    margin-bottom: 2rem;
+}
+.inside_login input::placeholder{
+    font-size: 1.6rem;
+    color:#757575;
+    font-weight: 400;
+
+}
+.login_btn{
+    height: 4.5rem;
+    width: 23rem;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #FFF;
+    background-color: #0084D6;
+    text-transform: uppercase;
+    border: none;
+}

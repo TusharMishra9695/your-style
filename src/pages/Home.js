@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import HomeSection1 from "../components/HomeSection1";
 import Product from "../components/Product";
 import Specialist from "../components/Specialist";
-import { navContent,homeSection1 ,featured , limited_edition ,specialist } from "../utils/content";
+import {
+  navContent,
+  homeSection1,
+  featured,
+  limited_edition,
+  specialist,
+} from "../utils/content";
 import axios from "axios";
 import Footer from "../components/Footer";
+import Nav from "../components/Nav";
 
 export default function Home() {
   const [product, setProduct] = useState("");
@@ -21,40 +27,7 @@ export default function Home() {
   return (
     <div className="home_p1">
       <div className="home_p2">
-        <div className="child1_p2">
-          <img src="/imgfiles/logo1-free-img.png" alt="" className="brand_logo" /> 
-          <ul className="CHILD1_P2_ul">
-            <li>
-              <Link className="CHILD1_P2_D1_A cursor">
-                {navContent.everything}
-              </Link>
-            </li>
-            <li>
-              <Link className="CHILD1_P2_D1_A cursor">{navContent.women}</Link>
-            </li>
-            <li>
-              <Link className="CHILD1_P2_D1_A cursor">{navContent.men}</Link>
-            </li>
-            <li>
-              <Link className="CHILD1_P2_D1_A cursor">
-                {navContent.accessories}
-              </Link>
-            </li>
-          </ul>
-          <ul className="CHILD1_P2_ul2">
-            <li>
-              <Link className="CHILD2_P2_D1_A cursor">{navContent.about}</Link>
-            </li>
-            <li>
-              <Link className="CHILD2_P2_D1_A cursor">
-                {navContent.contact}
-              </Link>
-            </li>
-            <li>
-              <Link className="CHILD2_P2_D1_A cursor">{navContent.price}</Link>
-            </li>
-          </ul>
-        </div>
+        <Nav />
         <div className="home_p3">
           <div className="child1_p3">
             <span className="child1_p3_t1">Raining Offers For Hot Summer!</span>
@@ -94,12 +67,12 @@ export default function Home() {
           </div>
         </div>
         <div className="specialist">
-          {specialist.map((items,index)=>{
-            return(<Specialist key={index} item={items}/>)
+          {specialist.map((items, index) => {
+            return <Specialist key={index} item={items} />;
           })}
         </div>
       </div>
-      <hr/>
+      <hr />
       <Footer />
     </div>
   );
