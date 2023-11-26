@@ -1,5 +1,6 @@
 import React from "react";
 import { footerContent, footerList } from "../utils/content";
+import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer>
@@ -17,13 +18,19 @@ export default function Footer() {
           <h4>{footerContent.look}</h4>
         </div>
         {footerList.map((items, index) => {
-          const { heading, list } = items;
+          const { heading, link, list } = items;
           return (
             <div key={index} className="footer_listing">
               <h2> {heading}</h2>
               <ul>
                 {list.map((item, id) => {
-                  return <li key={id}>{item.name}</li>;
+                  return (
+                    <Link to={link}>
+                      <li key={id} className="cursor">
+                        {item.name}
+                      </li>
+                    </Link>
+                  );
                 })}
               </ul>
             </div>
@@ -40,7 +47,7 @@ export default function Footer() {
             />
           </div>
 
-          <button>{footerContent.subs}</button>
+          <button className="cursor">{footerContent.subs}</button>
         </div>
       </div>
     </footer>
