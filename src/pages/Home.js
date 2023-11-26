@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import HomeSection1 from "../components/HomeSection1";
 import Product from "../components/Product";
 import Specialist from "../components/Specialist";
