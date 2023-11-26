@@ -1,8 +1,13 @@
 import React from 'react'
+import Nav from '../components/Nav'
+import Footer from '../components/Footer'
 
 export default function Accessories() {
   return (
-    <div>Accessories</div>
+    <div>
+      <Nav />
+      <Footer/> 
+    </div>
   )
 }
 

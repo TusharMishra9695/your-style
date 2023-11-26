@@ -1,7 +1,12 @@
 import React from 'react'
+import Nav from '../components/Nav'
+import Footer from '../components/Footer'
 
 export default function Women() {
   return (
-    <div>Women</div>
+    <div>
+      <Nav />
+      <Footer/>
+    </div>
   )
 }

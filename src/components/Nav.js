@@ -9,29 +9,28 @@ export default function Nav() {
   const [showlog,setshowlog] = useState(false)
   return (
     <div className="child1_p2">
-      <img src="/imgfiles/logo1-free-img.png" alt="" className="brand_logo" />
+      <Link to="/home" >
+      <img src="/imgfiles/logo1-free-img.png" alt="brand logo" className="brand_logo" /></Link>
+      
       <ul className="CHILD1_P2_ul">
         <li>
-          <Link className="CHILD1_P2_D1_A cursor">{navContent.everything}</Link>
+          <Link className="CHILD1_P2_D1_A cursor" to="/everything">{navContent.everything}</Link>
         </li>
         <li>
-          <Link className="CHILD1_P2_D1_A cursor">{navContent.women}</Link>
+          <Link className="CHILD1_P2_D1_A cursor" to="/women">{navContent.women}</Link>
         </li>
         <li>
-          <Link className="CHILD1_P2_D1_A cursor">{navContent.men}</Link>
+          <Link className="CHILD1_P2_D1_A cursor" to="/men">{navContent.men}</Link>
         </li>
         <li>
-          <Link className="CHILD1_P2_D1_A cursor">
+          <Link className="CHILD1_P2_D1_A cursor" to="/accessories">
             {navContent.accessories}
           </Link>
         </li>
       </ul>
       <ul className="CHILD1_P2_ul2">
         <li>
-          <Link className="CHILD2_P2_D1_A cursor">{navContent.about}</Link>
-        </li>
-        <li>
-          <Link className="CHILD2_P2_D1_A cursor">{navContent.contact}</Link>
+          <Link className="CHILD2_P2_D1_A cursor" to="/contact">{navContent.contact}</Link>
         </li>
         <li>
           <Link className="CHILD2_P2_D1_A cursor">{navContent.price}</Link>
