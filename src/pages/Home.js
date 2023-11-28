@@ -18,9 +18,9 @@ export default function Home() {
   useEffect(() => {
     if (!product) {
       axios
-        .get("https://fakestoreapi.com/products")
+        .get(`${process.env.REACT_APP_BASE_URL}/products`)
         .then((res) => {
-          setProduct(res.data);
+          setProduct(res.data.products);
         })
         .catch((error) => {
           console.log(error.message, "error");
