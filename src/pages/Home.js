@@ -17,13 +17,16 @@ export default function Home() {
   const [product, setProduct] = useState("");
   useEffect(() => {
     if (!product) {
-      axios.get("https://fakestoreapi.com/products").then((res) => {
-        setProduct(res.data);
-        console.log(res.data, "res");
-      });
+      axios
+        .get("https://fakestoreapi.com/products")
+        .then((res) => {
+          setProduct(res.data);
+        })
+        .catch((error) => {
+          console.log(error.message, "error");
+        });
     }
   }, []);
-  if (!product) return null;
   return (
     <div className="home_p1">
       <div className="home_p2">
@@ -46,16 +49,19 @@ export default function Home() {
           return <HomeSection1 key={index} item={item} />;
         })}
       </div>
-      <div className="featured_products">
-        <div className="inside_pro">
-          <h1>{featured.name}</h1>
+      {!product ? null : (
+        <div className="featured_products">
+          <div className="inside_pro">
+            <h1>{featured.name}</h1>
+          </div>
+          <div className="product_img">
+            {product.slice(0, 10).map((item, index) => {
+              return <Product key={index} item={item} />;
+            })}
+          </div>
         </div>
-        <div className="product_img">
-          {product.slice(0, 10).map((item, index) => {
-            return <Product key={index} item={item} />;
-          })}
-        </div>
-      </div>
+      )}
+
       <div className="limited_edition">
         <div className="bg_img">
           <div className="inside_bg_img">
