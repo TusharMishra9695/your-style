@@ -7,6 +7,7 @@ import Men from "../pages/Men";
 import Accessories from "../pages/Accessories";
 import Cart from "../pages/Cart";
 import Contact from "../pages/Contact";
+import { ToastContainer } from "react-toastify";
 
 export default function RouteRole() {
   return (
@@ -23,6 +24,7 @@ export default function RouteRole() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </BrowserRouter>
+      <ToastContainer />
     </div>
   );
 }

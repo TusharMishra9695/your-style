@@ -25,10 +25,8 @@ export default function Footer() {
               <ul>
                 {list.map((item, id) => {
                   return (
-                    <Link to={link}>
-                      <li key={id} className="cursor">
-                        {item.name}
-                      </li>
+                    <Link to={link} key={id}>
+                      <li className="cursor">{item.name}</li>
                     </Link>
                   );
                 })}
