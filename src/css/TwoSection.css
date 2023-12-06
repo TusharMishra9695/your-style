@@ -44,6 +44,8 @@
   padding: 0.6rem 0.8rem;
   font-size: 1.5rem;
   color: #666;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 .btn_search {
   background-color: #0084d6;
@@ -57,4 +59,56 @@
 }
 .search_sec {
   display: flex;
+}
+.filter_Sec div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.filter_Sec p {
+  font-size: 2.3rem;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 1.54rem;
+  margin-top: 3rem;
+}
+.filter_Sec input {
+  width: 27rem;
+}
+.filter_Sec div button {
+  padding: 0.8rem 1.8rem;
+  background-color: #0084d6;
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  width: 8.141rem;
+  height: 2.86rem;
+  letter-spacing: 0.15rem;
+}
+.filter_Sec div span {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  color: #333;
+}
+.categories p {
+  font-size: 2.3rem;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 1.54rem;
+  margin-top: 4rem;
+}
+.categories div h2,
+span {
+  font-size: 1.7rem;
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+  color: #333;
+  padding-top: 0.2rem;
+}
+.categories div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
 }

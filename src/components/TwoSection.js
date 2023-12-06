@@ -26,32 +26,32 @@ export default function TwoSection() {
           />
           <button className="btn_search">=</button>
         </div>
-        <div>
-          <label for="range">Filter by Price</label>
+        <div className="filter_Sec">
+          <p>Filter by Price</p>
           <input type="range" name="range" id="ranges" />
           <div>
             <button>Filter</button>
             <span> Price:$20 -- $290</span>
           </div>
         </div>
-        <div>
+        <div className="categories">
           <p>Categories</p>
           <div>
             <h2>Accessories</h2>
-            <span>7</span>
+            <span>(7)</span>
           </div>
           <div>
             <h2>Men</h2>
-            <span>7</span>
+            <span>(7)</span>
           </div>
           <div>
             <h2>Women</h2>
-            <span>7</span>
+            <span>(7)</span>
           </div>
         </div>
-        <div>
+        {/* <div>
           <p>Our Best Sellers</p>
-        </div>
+        </div> */}
       </div>
       <div className="pro_listing_sec">
         <div>
