@@ -3,13 +3,12 @@ import HomeSection1 from "../components/HomeSection1";
 import Product from "../components/Product";
 import Specialist from "../components/Specialist";
 import {
-  navContent,
   homeSection1,
   featured,
   limited_edition,
   specialist,
 } from "../utils/content";
-import axios from "axios";
+import { getAPI } from "../utils/apiCalls";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 
@@ -17,14 +16,9 @@ export default function Home() {
   const [product, setProduct] = useState("");
   useEffect(() => {
     if (!product) {
-      axios
-        .get(`${process.env.REACT_APP_BASE_URL}/products`)
-        .then((res) => {
-          setProduct(res.data.products);
-        })
-        .catch((error) => {
-          console.log(error.message, "error");
-        });
+      getAPI(`${process.env.REACT_APP_BASE_URL}/products`).then((res) => {
+        setProduct(res);
+      });
     }
   }, []);
   return (
