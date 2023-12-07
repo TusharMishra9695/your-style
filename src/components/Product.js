@@ -7,8 +7,8 @@ export default function Product(props) {
       <img src={image} alt="" className="pro_img cursor" />
       <h2 className="cursor">{title}</h2>
       <h4>{category}</h4>
-      <span className="extra_prod">${Math.round(price * 8)} </span>
-      <span>${Math.round(price * 7)}</span>
+      <span className="extra_prod">${Math.round(price)} </span>
+      <span>${Math.round(price - (price * 10) / 100)}</span>
     </div>
   );
 }
