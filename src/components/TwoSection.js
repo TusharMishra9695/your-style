@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Product from "./Product";
 import { getAPI } from "../utils/apiCalls";
 import "../css/TwoSection.css";
+import { min_max_Price } from "../utils/logics";
 
 export default function TwoSection() {
   const [product, setProduct] = useState("");
@@ -9,6 +10,7 @@ export default function TwoSection() {
     if (!product) {
       getAPI(`${process.env.REACT_APP_BASE_URL}/products`).then((res) => {
         setProduct(res);
+        min_max_Price(res);
       });
     }
   }, []);
@@ -24,7 +26,7 @@ export default function TwoSection() {
             className="search_input"
             placeholder="Search products..."
           />
-          <button className="btn_search">=</button>
+          <button className="btn_search">&gt;</button>
         </div>
         <div className="filter_Sec">
           <p>Filter by Price</p>
@@ -74,7 +76,7 @@ export default function TwoSection() {
         {!product ? null : (
           <div className="common_pro__listing">
             <div className="product_img">
-              {product.slice(0, 12).map((item, index) => {
+              {product.slice(0, 9).map((item, index) => {
                 return <Product key={index} item={item} />;
               })}
             </div>
