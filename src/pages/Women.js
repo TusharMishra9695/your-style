@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import TwoSection from "../components/TwoSection";
 
 export default function Women() {
+  window.scrollTo({ top: 0 });
   return (
     <div>
       <Nav />

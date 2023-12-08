@@ -1,16 +1,33 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Product from "./Product";
-import { getAPI } from "../utils/apiCalls";
 import "../css/TwoSection.css";
-import { min_max_Price } from "../utils/logics";
+import { fetchData } from "../store/slice/apiSlice";
+import { getAPI } from "../utils/apiCalls";
 
 export default function TwoSection() {
-  const [product, setProduct] = useState("");
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.apiSlice.data);
+  const [product, setProduct] = useState(state);
+
   useEffect(() => {
-    if (!product) {
-      getAPI(`${process.env.REACT_APP_BASE_URL}/products`).then((res) => {
+    if (window.location.pathname === "/everything") {
+      if (!state) {
+        dispatch(fetchData());
+      }
+    } else {
+      let end_point;
+      if (window.location.pathname === "/men") {
+        end_point = "men's clothing";
+      } else if (window.location.pathname === "/women") {
+        end_point = "women's clothing";
+      } else {
+        end_point = "jewelery";
+      }
+      getAPI(
+        `${process.env.REACT_APP_BASE_URL}/products/category/${end_point}`
+      ).then((res) => {
         setProduct(res);
-        min_max_Price(res);
       });
     }
   }, []);
@@ -39,15 +56,15 @@ export default function TwoSection() {
         <div className="categories">
           <p>Categories</p>
           <div>
-            <h2>Accessories</h2>
-            <span>(7)</span>
-          </div>
-          <div>
-            <h2>Men</h2>
+            <h2>Jewellery</h2>
             <span>(7)</span>
           </div>
           <div>
             <h2>Women</h2>
+            <span>(7)</span>
+          </div>
+          <div>
+            <h2>Men</h2>
             <span>(7)</span>
           </div>
         </div>
@@ -57,7 +74,9 @@ export default function TwoSection() {
       </div>
       <div className="pro_listing_sec">
         <div>
-          <h3 className="store_type">Home/ Store</h3>
+          <h3 className="store_type">
+            {window.location.pathname.replace("/", "")} / Store
+          </h3>
         </div>
         <div className="flex_sort__result">
           <div className="flex_sort__child1">
@@ -73,7 +92,17 @@ export default function TwoSection() {
             </select>
           </div>
         </div>
-        {!product ? null : (
+        {window.location.pathname === "/everything" ? (
+          !state ? null : (
+            <div className="common_pro__listing">
+              <div className="product_img">
+                {state.slice(0, 9).map((item, index) => {
+                  return <Product key={index} item={item} />;
+                })}
+              </div>
+            </div>
+          )
+        ) : !product ? null : (
           <div className="common_pro__listing">
             <div className="product_img">
               {product.slice(0, 9).map((item, index) => {
