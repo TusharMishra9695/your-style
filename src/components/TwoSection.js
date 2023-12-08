@@ -74,7 +74,9 @@ export default function TwoSection() {
       </div>
       <div className="pro_listing_sec">
         <div>
-          <h3 className="store_type">Home/ Store</h3>
+          <h3 className="store_type">
+            {window.location.pathname.replace("/", "")} / Store
+          </h3>
         </div>
         <div className="flex_sort__result">
           <div className="flex_sort__child1">

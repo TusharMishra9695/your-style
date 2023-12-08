@@ -3,6 +3,7 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 
 export default function Cart() {
+  window.scrollTo({ top: 0 });
   return (
     <div>
       <Nav />

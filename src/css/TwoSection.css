@@ -12,6 +12,7 @@
   margin-bottom: 1.5rem;
   color: #777;
   font-weight: 500;
+  text-transform: capitalize;
 }
 .show_result {
   margin: 1.6rem 0rem;

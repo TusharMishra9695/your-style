@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import HomeSection1 from "../components/HomeSection1";
 import Product from "../components/Product";
@@ -20,6 +21,7 @@ export default function Home() {
       dispatch(fetchData());
     }
   }, []);
+  window.scrollTo({ top: 0, behavior: "smooth" });
   return (
     <div className="home_p1">
       <div className="home_p2">
@@ -32,8 +34,12 @@ export default function Home() {
             <span className="child1_p3_t2">25% Off On All Products</span>
           </div>
           <div className="child1_p3">
-            <span className="child1_p3_t3 cursor">shop now</span>
-            <span className="child1_p3_t4 cursor">find more</span>
+            <Link to="/everything">
+              <span className="child1_p3_t3 cursor">shop now</span>
+            </Link>
+            <Link to="/everything">
+              <span className="child1_p3_t4 cursor">find more</span>
+            </Link>
           </div>
         </div>
       </div>

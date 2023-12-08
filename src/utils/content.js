@@ -11,23 +11,26 @@ export const homeSection1 = [
   {
     para: "20% Off On Tank Tops",
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dictum.",
+      "Elevate your wardrobe with fashionable deals, ensuring you shine without breaking the bank.",
     btn: "shop now",
     image: "imgfiles/women-fashion-free-img.jpg",
+    link: "/women",
   },
   {
-    para: "Latest Eyewear For You",
+    para: "Latest T-Shirts For You",
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dictum.",
+      "From laid-back weekends to casual, embrace comfort without compromising on fashion.",
     btn: "shop now",
     image: "imgfiles/men-fashion-free-img.jpg",
+    link: "/men",
   },
   {
-    para: "Let's Lorem Suit Up!",
+    para: "Let's Jewellery Suit Up!",
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dictum.",
+      "Unparalleled craftsmanship, timeless designs perfect blend of elegance and allure.",
     btn: "shop now",
     image: "imgfiles/footwear-free-img.jpg",
+    link: "/accessories",
   },
 ];
 export const featured = {
@@ -37,30 +40,29 @@ export const limited_edition = {
   limited: "Limited Time Offer",
   special: "Special Edition",
   detail:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo",
-  topic: "Buy This T-shirt At 20% Discount, Use Code OFF20",
+    "Introducing our exclusive Special Edition Clothing Collection, where style meets sophistication in a seamless blend of luxury and innovation.",
   btn: "shop now",
 };
 export const specialist = [
   {
     image: "imgfiles/globe-free-img.png",
     heading: "Worldwide Shipping",
-    para: "It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+    para: "Embark on a global fashion with our worldwide shipping service.",
   },
   {
     image: "imgfiles/quality-free-img.png",
     heading: "Best Quality",
-    para: "It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+    para: "Indulge in unparalleled luxury with our meticulously crafted garments.",
   },
   {
     image: "imgfiles/tag-free-img.png",
     heading: "Best Offers",
-    para: "It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+    para: "Discover unbeatable style and savings with our exclusive offers.",
   },
   {
     image: "imgfiles/lock-free-img.png",
     heading: "Secure Payments",
-    para: "It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+    para: "Shop confidently with our secure payment methods.",
   },
 ];
 
