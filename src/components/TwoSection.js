@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Product from "./Product";
-import { getAPI } from "../utils/apiCalls";
 import "../css/TwoSection.css";
-import { min_max_Price } from "../utils/logics";
+import { fetchData } from "../store/slice/apiSlice";
 
 export default function TwoSection() {
-  const [product, setProduct] = useState("");
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.apiSlice.data);
+
   useEffect(() => {
-    if (!product) {
-      getAPI(`${process.env.REACT_APP_BASE_URL}/products`).then((res) => {
-        setProduct(res);
-        min_max_Price(res);
-      });
+    if (!state) {
+      dispatch(fetchData());
     }
   }, []);
 
@@ -73,10 +72,10 @@ export default function TwoSection() {
             </select>
           </div>
         </div>
-        {!product ? null : (
+        {!state ? null : (
           <div className="common_pro__listing">
             <div className="product_img">
-              {product.slice(0, 9).map((item, index) => {
+              {state.slice(0, 9).map((item, index) => {
                 return <Product key={index} item={item} />;
               })}
             </div>

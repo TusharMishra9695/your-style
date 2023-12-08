@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import HomeSection1 from "../components/HomeSection1";
 import Product from "../components/Product";
 import Specialist from "../components/Specialist";
@@ -8,17 +9,15 @@ import {
   limited_edition,
   specialist,
 } from "../utils/content";
-import { getAPI } from "../utils/apiCalls";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
-
+import { fetchData } from "../store/slice/apiSlice";
 export default function Home() {
-  const [product, setProduct] = useState("");
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.apiSlice.data);
   useEffect(() => {
-    if (!product) {
-      getAPI(`${process.env.REACT_APP_BASE_URL}/products`).then((res) => {
-        setProduct(res);
-      });
+    if (!state) {
+      dispatch(fetchData());
     }
   }, []);
   return (
@@ -43,13 +42,13 @@ export default function Home() {
           return <HomeSection1 key={index} item={item} />;
         })}
       </div>
-      {!product ? null : (
+      {!state ? null : (
         <div className="featured_products">
           <div className="inside_pro">
             <h1>{featured.name}</h1>
           </div>
           <div className="product_img">
-            {product.slice(0, 10).map((item, index) => {
+            {state.slice(0, 10).map((item, index) => {
               return <Product key={index} item={item} />;
             })}
           </div>
