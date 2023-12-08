@@ -1,16 +1,34 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Product from "./Product";
 import "../css/TwoSection.css";
 import { fetchData } from "../store/slice/apiSlice";
+import { getAPI } from "../utils/apiCalls";
 
 export default function TwoSection() {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.apiSlice.data);
+  const [product, setProduct] = useState(state);
 
   useEffect(() => {
-    if (!state) {
-      dispatch(fetchData());
+    if (window.location.pathname === "/everything") {
+      if (!state) {
+        dispatch(fetchData());
+      }
+    } else {
+      let end_point;
+      if (window.location.pathname === "/men") {
+        end_point = "men's clothing";
+      } else if (window.location.pathname === "/women") {
+        end_point = "women's clothing";
+      } else {
+        end_point = "jewelery";
+      }
+      getAPI(
+        `${process.env.REACT_APP_BASE_URL}/products/category/${end_point}`
+      ).then((res) => {
+        setProduct(res);
+      });
     }
   }, []);
 
@@ -38,15 +56,15 @@ export default function TwoSection() {
         <div className="categories">
           <p>Categories</p>
           <div>
-            <h2>Accessories</h2>
-            <span>(7)</span>
-          </div>
-          <div>
-            <h2>Men</h2>
+            <h2>Jewellery</h2>
             <span>(7)</span>
           </div>
           <div>
             <h2>Women</h2>
+            <span>(7)</span>
+          </div>
+          <div>
+            <h2>Men</h2>
             <span>(7)</span>
           </div>
         </div>
@@ -72,10 +90,20 @@ export default function TwoSection() {
             </select>
           </div>
         </div>
-        {!state ? null : (
+        {window.location.pathname === "/everything" ? (
+          !state ? null : (
+            <div className="common_pro__listing">
+              <div className="product_img">
+                {state.slice(0, 9).map((item, index) => {
+                  return <Product key={index} item={item} />;
+                })}
+              </div>
+            </div>
+          )
+        ) : !product ? null : (
           <div className="common_pro__listing">
             <div className="product_img">
-              {state.slice(0, 9).map((item, index) => {
+              {product.slice(0, 9).map((item, index) => {
                 return <Product key={index} item={item} />;
               })}
             </div>

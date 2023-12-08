@@ -2,7 +2,7 @@ export const navContent = {
   everything: "everything",
   women: "women",
   men: "men",
-  accessories: "accessories",
+  accessories: "jewellery",
   about: "about",
   contact: "contact us",
   price: "$0.00",
