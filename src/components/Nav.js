@@ -112,7 +112,7 @@ export default function Nav() {
             {navContent.contact}
           </Link>
         </li>
-        <li>
+        <li className="onhover">
           <Link
             className={
               window.location.pathname === "/price"

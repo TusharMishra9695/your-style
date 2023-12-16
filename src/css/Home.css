@@ -1,11 +1,12 @@
 .home_p2 {
-  background-image: url(../../public/imgfiles/home-new-bg-free-img.jpg);
+  background-image: url("../../public/imgfiles/home-new-bg-free-img.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   /* height: 71.9rem; */
   background-attachment: fixed;
   width: auto;
+  position: relative;
 }
 .child1_p2 {
   width: 100%;
@@ -360,5 +361,59 @@
   cursor: pointer;
 }
 .user_icon_white {
+  color: #fff;
+}
+.home_p2_hover {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.home_p2_hover div {
+  width: 20rem;
+  padding: 2rem 0rem 2rem 2rem;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 2px;
+  border-bottom: 1px solid black;
+}
+.home_p2_hover div span {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #000;
+}
+.home_p2_hover div:hover {
+  background-color: #f5f7f9;
+}
+.login_modal {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* right: auto;
+  bottom: auto;
+  margin-right: -50%; */
+  background-color: #f5f7f9;
+  padding: 3rem;
+  border-radius: 4px;
+}
+.login_modal div input {
+  width: 25rem;
+  height: 5rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: none;
+}
+.login_submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0084d6;
+  height: 4rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+.login_submit span {
+  font-size: 1.8rem;
+  font-weight: 500;
   color: #fff;
 }
