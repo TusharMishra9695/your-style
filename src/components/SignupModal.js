@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { ImCross } from "react-icons/im";
 
 export default function SignupModal(props) {
   const {
@@ -14,42 +15,52 @@ export default function SignupModal(props) {
           onSubmit={handleSubmit((data) => console.log(data))}
           className="login_modal"
         >
+          <div className="cut">
+            <ImCross />
+          </div>
           <div className="profile">
-            <input type="file" name="profilePhoto" id="profile" />
+            <input
+              type="file"
+              id="profile"
+              accept="image/*"
+              {...register("profile")}
+            />
           </div>
           <div>
             <input
               type="text"
-              name="user"
               id="username"
-              value={""}
+              {...register("username", { required: true })}
               placeholder="Username"
             />
           </div>
           <div>
             <input
               type="text"
-              name="password"
               id="password"
-              value={""}
               placeholder="Password"
+              {...register("password", { required: true })}
             />
           </div>
           <div>
-            <input type="email" name="email" id="email" placeholder="Email" />
+            <input
+              type="email"
+              id="email"
+              placeholder="Email"
+              {...register("email", { required: true })}
+            />
           </div>
           <div>
             <input
               type="number"
-              name="mobile_number"
               id="number"
-              placeholder="Mobile Number"
+              placeholder="Contact Number"
+              {...register("contact", { required: true })}
             />
           </div>
-
-          <div className="login_submit">
-            <span>SignUp</span>
-          </div>
+          <button type="submit" className="login_submit">
+            SignUp
+          </button>
         </form>
       ) : null}
     </>
