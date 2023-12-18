@@ -13,15 +13,10 @@ import {
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import { fetchData } from "../store/slice/apiSlice";
-import LoginModal from "../components/LoginModal";
-import SignupModal from "../components/SignupModal";
+
 export default function Home() {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.apiSlice.data);
-  const [openModal, setopenModal] = useState({
-    login: false,
-    signup: false,
-  });
   useEffect(() => {
     if (!state) {
       dispatch(fetchData());
@@ -32,22 +27,7 @@ export default function Home() {
     <div className="home_p1">
       <div className="home_p2">
         <Nav />
-        <div className="home_p2_hover">
-          <div
-            onClick={() =>
-              setopenModal({ ...openModal, login: true, signup: false })
-            }
-          >
-            <span>Login</span>
-          </div>
-          <div
-            onClick={() =>
-              setopenModal({ ...openModal, login: false, signup: true })
-            }
-          >
-            <span>SignUp</span>
-          </div>
-        </div>
+
         <div className="home_p3">
           <div className="child1_p3">
             <span className="child1_p3_t1">Raining Offers For Hot Summer!</span>
@@ -64,8 +44,6 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <LoginModal isOpen={openModal.login} />
-        <SignupModal isOpen={openModal.signup} />
       </div>
       <div className="home_section1">
         {homeSection1.map((item, index) => {

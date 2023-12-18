@@ -364,9 +364,9 @@
   color: #fff;
 }
 .home_p2_hover {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  display: none;
+  position: absolute;
+  padding-top: 42px;
 }
 .home_p2_hover div {
   width: 20rem;
@@ -374,6 +374,7 @@
   background-color: #fff;
   cursor: pointer;
   border-radius: 2px;
+  margin-left: -15rem;
   border-bottom: 1px solid black;
 }
 .home_p2_hover div span {
@@ -435,4 +436,8 @@
   width: 1rem;
   height: 1rem;
   cursor: pointer;
+}
+
+.show_login:hover .home_p2_hover {
+  display: block;
 }

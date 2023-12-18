@@ -17,7 +17,7 @@ export default function LoginModal(props) {
             className="login_modal"
           >
             <div className="cut">
-              <ImCross />
+              <ImCross onClick={() => props.isClose(false)} />
             </div>
             <div>
               <input
