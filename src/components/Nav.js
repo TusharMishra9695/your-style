@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { navContent } from "../utils/content";
+import LoginModal from "./LoginModal";
+import SignupModal from "./SignupModal";
 import { RiUser3Fill } from "react-icons/ri";
-import Login from "./Login";
 import "../css/Login.css";
 
 export default function Nav() {
   const [showlog, setshowlog] = useState(false);
+  const [openModal, setopenModal] = useState({
+    login: false,
+    signup: false,
+  });
+  const handleClose = (e) => {
+    setopenModal({ ...openModal, login: e, signup: e });
+  };
   return (
     <div
       className={
@@ -126,7 +134,7 @@ export default function Nav() {
             {navContent.price}
           </Link>
         </li>
-        <li>
+        <li className="show_login">
           <RiUser3Fill
             className={
               (window.location.pathname === "/home") |
@@ -137,8 +145,26 @@ export default function Nav() {
             }
             onClick={() => setshowlog(true)}
           />
+          <div className="home_p2_hover">
+            <div
+              onClick={() =>
+                setopenModal({ ...openModal, login: true, signup: false })
+              }
+            >
+              <span>Login</span>
+            </div>
+            <div
+              onClick={() =>
+                setopenModal({ ...openModal, login: false, signup: true })
+              }
+            >
+              <span>SignUp</span>
+            </div>
+          </div>
         </li>
       </ul>
+      <LoginModal isOpen={openModal.login} isClose={handleClose} />
+      <SignupModal isOpen={openModal.signup} isClose={handleClose} />
       {/* {showlog ? <Login /> : null} */}
     </div>
   );

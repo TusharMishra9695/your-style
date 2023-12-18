@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import HomeSection1 from "../components/HomeSection1";
@@ -13,6 +13,7 @@ import {
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import { fetchData } from "../store/slice/apiSlice";
+
 export default function Home() {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.apiSlice.data);
@@ -26,6 +27,7 @@ export default function Home() {
     <div className="home_p1">
       <div className="home_p2">
         <Nav />
+
         <div className="home_p3">
           <div className="child1_p3">
             <span className="child1_p3_t1">Raining Offers For Hot Summer!</span>

@@ -22,3 +22,14 @@ a {
   background-color: #f5f7f9;
   padding: 2rem 10rem;
 }
+input {
+  outline: none;
+}
+button {
+  border: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
