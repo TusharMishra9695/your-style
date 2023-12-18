@@ -81,7 +81,6 @@ export default function Home() {
       </div>
       <hr />
       <Footer />
-      {hgashga}
     </div>
   );
 }
