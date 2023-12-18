@@ -163,6 +163,7 @@ export default function Nav() {
           </div>
         </li>
       </ul>
+
       <LoginModal isOpen={openModal.login} isClose={handleClose} />
       <SignupModal isOpen={openModal.signup} isClose={handleClose} />
       {/* {showlog ? <Login /> : null} */}
