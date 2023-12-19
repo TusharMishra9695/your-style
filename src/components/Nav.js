@@ -5,15 +5,17 @@ import LoginModal from "./LoginModal";
 import SignupModal from "./SignupModal";
 import { RiUser3Fill } from "react-icons/ri";
 import "../css/Login.css";
+import CartModal from "./CartModal";
 
 export default function Nav() {
   const [showlog, setshowlog] = useState(false);
   const [openModal, setopenModal] = useState({
     login: false,
     signup: false,
+    cart: false,
   });
   const handleClose = (e) => {
-    setopenModal({ ...openModal, login: e, signup: e });
+    setopenModal({ ...openModal, login: e, signup: e, cart: e });
   };
   return (
     <div
@@ -120,7 +122,10 @@ export default function Nav() {
             {navContent.contact}
           </Link>
         </li>
-        <li>
+        <li
+          className="show_cart"
+          onClick={() => setopenModal({ ...openModal, cart: true })}
+        >
           <Link
             className={
               window.location.pathname === "/price"
@@ -166,6 +171,7 @@ export default function Nav() {
 
       <LoginModal isOpen={openModal.login} isClose={handleClose} />
       <SignupModal isOpen={openModal.signup} isClose={handleClose} />
+      <CartModal isOpen={openModal.cart} isClose={handleClose} />
       {/* {showlog ? <Login /> : null} */}
     </div>
   );
