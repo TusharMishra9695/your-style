@@ -8,6 +8,7 @@ import Accessories from "../pages/Accessories";
 import Cart from "../pages/Cart";
 import Contact from "../pages/Contact";
 import { ToastContainer } from "react-toastify";
+import ProductDetail from "../components/ProductDetail";
 
 export default function RouteRole() {
   return (
@@ -22,6 +23,10 @@ export default function RouteRole() {
           <Route path="/accessories" element={<Accessories />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/everything/:id" element={<ProductDetail />} />
+          <Route path="/women/:id" element={<ProductDetail />} />
+          <Route path="/men/:id" element={<ProductDetail />} />
+          <Route path="/accessories/:id" element={<ProductDetail />} />
         </Routes>
       </BrowserRouter>
       <ToastContainer />
