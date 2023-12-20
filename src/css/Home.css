@@ -13,6 +13,8 @@
   height: 10.28rem;
   padding: 1.6rem 0;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
   padding: 0 3.5rem;
 }
@@ -22,13 +24,12 @@
 
 .CHILD1_P2_ul {
   display: flex;
-  width: 50%;
+  flex-wrap: wrap;
 }
 
 .CHILD1_P2_ul2 {
   display: flex;
   justify-content: flex-end;
-  width: 50%;
 }
 .CHILD1_P2_D1_A {
   font-size: 1.44rem;

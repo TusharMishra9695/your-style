@@ -5,7 +5,11 @@ export default function Product(props) {
   const { image, title, category, price, id } = props.item;
   return (
     <div className="prod">
-      <Link to={`${window.location.pathname}/${title}?id=${id}`}>
+      <Link
+        to={`${
+          window.location.pathname == "/" ? "home" : window.location.pathname
+        }/${title}?id=${id}`}
+      >
         <img src={image} alt="product img" className="pro_img cursor" />
       </Link>
       <h2 className="cursor">{title}</h2>

@@ -27,6 +27,8 @@ export default function RouteRole() {
           <Route path="/women/:id" element={<ProductDetail />} />
           <Route path="/men/:id" element={<ProductDetail />} />
           <Route path="/accessories/:id" element={<ProductDetail />} />
+          <Route path="/home/:id" element={<ProductDetail />} />
+          <Route path="//:id" element={<ProductDetail />} />
         </Routes>
       </BrowserRouter>
       <ToastContainer />

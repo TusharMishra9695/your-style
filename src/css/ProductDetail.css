@@ -1,0 +1,124 @@
+.detail_sec00 {
+  display: flex;
+  padding: 3rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.detail_sec01 img {
+  border-radius: 4px;
+  width: 100%;
+  min-width: 40rem;
+  height: 40rem;
+}
+.detail_sec02 {
+  width: 100%;
+  max-width: 60rem;
+  min-width: 25rem;
+}
+.detail_sec02 div:nth-child(1) span {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #777;
+  text-transform: capitalize;
+}
+.detail_sec02 div {
+  margin-bottom: 1.5rem;
+}
+.detail_sec02 div:nth-child(2) p {
+  font-size: 3rem;
+  font-weight: 500;
+}
+.detail_sec02 div:nth-child(3) h1 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #333;
+}
+.detail_sec02 div:nth-child(4) h2 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #333;
+  width: 100%;
+  max-width: 50rem;
+  word-spacing: 0.5px;
+  letter-spacing: 1px;
+}
+
+.detail_sec02 div:nth-child(5) {
+  border-top: 1px solid #d7d6d6;
+  border-bottom: 1px solid #d7d6d6;
+  padding: 1.2rem 0rem;
+}
+.detail_sec02 div:nth-child(5) div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 0px !important;
+}
+.detail_sec02 div:nth-child(5) div input {
+  width: 59px;
+  height: 35px;
+  background-color: #fff;
+  margin-right: 2rem;
+  border: 1px solid #d7d6d6;
+  font-size: 1.6rem;
+  padding-left: 20px;
+}
+.detail_sec02 div:nth-child(5) div button {
+  width: 27.6rem;
+  height: 3.4rem;
+  background-color: #0084d6;
+  font-size: 1.5rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.detail_downside {
+  border-top: 1px solid #d7d6d6;
+}
+.detail_downside div:nth-child(1) span {
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: #515151;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+.detail_downside div:nth-child(1) {
+  padding: 0.8rem 0rem;
+  margin-bottom: 1.6rem;
+}
+.prod_descr div:nth-child(1) h1 {
+  font-size: 2.6rem;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 2rem;
+}
+.prod_descr {
+  padding-top: 4rem;
+}
+.prod_descr div:nth-child(2) h2 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #333;
+  word-spacing: 0.5px;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+.design_review p:nth-child(1) {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 2.6rem;
+}
+.design_review__box {
+  border: 1px solid #d7d6d6;
+  padding: 2.7rem;
+}
+.design_review__box div:nth-child(1) h1 {
+  color: #333;
+  font-weight: 400;
+  font-size: 2.2rem;
+}

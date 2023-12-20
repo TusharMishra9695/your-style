@@ -5,6 +5,7 @@ import Nav from "./Nav";
 import Footer from "./Footer";
 import { getParams } from "../utils/logics";
 import { getAPI } from "../utils/apiCalls";
+import "../css/ProductDetail.css";
 
 export default function ProductDetail() {
   const [showSec, setShowSec] = useState({
@@ -24,7 +25,7 @@ export default function ProductDetail() {
       <Nav />
       {detail && (
         <div className="common_inside">
-          <div>
+          <div className="detail_sec00">
             <div className="detail_sec01">
               <img src={detail.image} alt="product image" />
             </div>
@@ -38,34 +39,37 @@ export default function ProductDetail() {
                 </span>
               </div>
               <div>
-                <p>{detail.title}</p>
+                <p>
+                  {detail.title.length > 25
+                    ? detail.title.slice(0, 24)
+                    : detail.title}
+                  ...
+                </p>
               </div>
               <div>
                 <h1>
-                  ${Math.round(detail.price)}
-                  <span>-</span> ${Math.round(detail.price * 1.5)}+{" "}
-                  <span>Free Shipping</span>
+                  ${Math.round(detail.price)}.00
+                  <span>-</span> ${Math.round(detail.price * 1.5)}.00
+                  <span>+ Free Shipping</span>
                 </h1>
               </div>
               <div>
                 <h2>
-                  {detail.description.length > 251
-                    ? detail.description.slice(0, 250)
+                  {detail.description.length > 250
+                    ? detail.description.slice(0, 249)
                     : detail.description}
                   ...
                 </h2>
               </div>
               <div>
-                <hr />
                 <div>
-                  <span>1</span>
-                  <span>add to cart</span>
+                  <input type="number" placeholder="1" value={"1"} />
+                  <button disabled>add to cart</button>
                 </div>
               </div>
             </div>
           </div>
           <div className="detail_downside">
-            <hr />
             <div>
               <span
                 onClick={() =>
@@ -79,14 +83,14 @@ export default function ProductDetail() {
                   setShowSec({ ...showSec, descrip: false, review: true })
                 }
               >
-                Reviews
+                Reviews (0)
               </span>
             </div>
           </div>
           {showSec.descrip ? (
             <Productdescrip description={detail.description} />
           ) : null}
-          {showSec.review ? <Review /> : null}
+          {showSec.review ? <Review title={detail.title} /> : null}
         </div>
       )}
       <Footer />
