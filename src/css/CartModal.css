@@ -5,3 +5,9 @@
   height: 100vh;
   right: 0;
 }
+.design_cart {
+  margin: 4rem 0rem;
+  font-size: 6rem;
+  font-weight: 500;
+  color: #54595f;
+}

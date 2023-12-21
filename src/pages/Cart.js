@@ -8,8 +8,8 @@ export default function Cart() {
     <div>
       <Nav />
       <div className="common_inside">
-        <div className="design_cart">
-          <h1>Cart</h1>
+        <div className="center_child ">
+          <h1 className="design_cart">Cart</h1>
         </div>
         <div className="design_table">
           <table>

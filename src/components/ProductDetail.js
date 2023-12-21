@@ -1,25 +1,31 @@
 import React, { useEffect, useState } from "react";
 import Productdescrip from "./Productdescrip";
+import { useDispatch } from "react-redux";
 import Review from "./Review";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import { getParams } from "../utils/logics";
 import { getAPI } from "../utils/apiCalls";
 import "../css/ProductDetail.css";
+import { amounttoAdd } from "../store/slice/addCart";
 
 export default function ProductDetail() {
+  const Dispatch = useDispatch();
   const [showSec, setShowSec] = useState({
     descrip: true,
     review: false,
   });
   const [detail, setdetail] = useState("");
+  const [quanObj, setquanObj] = useState({
+    data: "",
+    quantity: "",
+  });
   useEffect(() => {
     let url = `${process.env.REACT_APP_BASE_URL}/products/${getParams()}`;
     getAPI(url).then((res) => {
       setdetail(res);
     });
   }, []);
-
   return (
     <div>
       <Nav />
@@ -63,8 +69,21 @@ export default function ProductDetail() {
               </div>
               <div>
                 <div>
-                  <input type="number" placeholder="1" value={"1"} />
-                  <button disabled>add to cart</button>
+                  <input
+                    type="number"
+                    placeholder="1"
+                    value={quanObj.quantity}
+                    onChange={(e) =>
+                      setquanObj({
+                        ...quanObj,
+                        data: detail,
+                        quantity: e.target.value,
+                      })
+                    }
+                  />
+                  <button onClick={() => Dispatch(amounttoAdd(quanObj))}>
+                    add to cart
+                  </button>
                 </div>
               </div>
             </div>
