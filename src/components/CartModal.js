@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/CartModal.css";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 export default function CartModal(props) {
   return (
@@ -9,9 +10,13 @@ export default function CartModal(props) {
           <div className="cart_modal">
             <div>
               <span>Shopping Cart</span>
-              <span onClick={() => props.isClose(false)}>**</span>
+
+              <AiOutlineCloseCircle
+                style={{ width: "25px", height: "25px" }}
+                className="cursor"
+                onClick={() => props.isClose(false)}
+              />
             </div>
-            <hr />
             <div>
               <img src="" alt="product image" />
               <div>

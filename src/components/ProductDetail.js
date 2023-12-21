@@ -3,6 +3,7 @@ import Productdescrip from "./Productdescrip";
 import { useDispatch } from "react-redux";
 import Review from "./Review";
 import Nav from "./Nav";
+import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import { getParams } from "../utils/logics";
 import { getAPI } from "../utils/apiCalls";
@@ -26,6 +27,8 @@ export default function ProductDetail() {
       setdetail(res);
     });
   }, []);
+  window.scrollTo({ top: 0 });
+
   return (
     <div>
       <Nav />
@@ -84,6 +87,7 @@ export default function ProductDetail() {
                   <button onClick={() => Dispatch(amounttoAdd(quanObj))}>
                     add to cart
                   </button>
+                  <Link to="/cart">Go to Cart</Link>
                 </div>
               </div>
             </div>

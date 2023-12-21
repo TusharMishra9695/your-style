@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { navContent } from "../utils/content";
+import { useSelector } from "react-redux";
 import LoginModal from "./LoginModal";
 import SignupModal from "./SignupModal";
 import { RiUser3Fill } from "react-icons/ri";
 import "../css/Login.css";
 import CartModal from "./CartModal";
+import { FaShoppingCart } from "react-icons/fa";
 
 export default function Nav() {
   const [showlog, setshowlog] = useState(false);
+  const quantity = useSelector((state) => state.cartSlice.value.length);
   const [openModal, setopenModal] = useState({
     login: false,
     signup: false,
@@ -17,6 +20,7 @@ export default function Nav() {
   const handleClose = (e) => {
     setopenModal({ ...openModal, login: e, signup: e, cart: e });
   };
+  console.log(quantity, "qau");
   return (
     <div
       className={
@@ -136,7 +140,8 @@ export default function Nav() {
                 : "CHILD2_P2_D1_A nav_color_black cursor"
             }
           >
-            {navContent.price}
+            {navContent.price} <FaShoppingCart />{" "}
+            {quantity == 0 ? null : quantity}
           </Link>
         </li>
         <li className="show_login">
