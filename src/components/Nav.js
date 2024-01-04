@@ -9,7 +9,7 @@ import "../css/Login.css";
 import CartModal from "./CartModal";
 import { FaShoppingCart } from "react-icons/fa";
 
-export default function Nav() {
+export default function Nav(props) {
   const [showlog, setshowlog] = useState(false);
   const quantity = useSelector((state) => state.cartSlice.value.length);
   const [openModal, setopenModal] = useState({
@@ -20,7 +20,7 @@ export default function Nav() {
   const handleClose = (e) => {
     setopenModal({ ...openModal, login: e, signup: e, cart: e });
   };
-  console.log(quantity, "qau");
+  const { brand_logo } = props.homeData;
   return (
     <div
       className={
@@ -35,7 +35,11 @@ export default function Nav() {
         {(window.location.pathname === "/home") |
         (window.location.pathname === "/") ? (
           <img
-            src="/imgfiles/logo1-free-img.png"
+            src={
+              brand_logo && brand_logo[0]
+                ? brand_logo[0]
+                : "/imgfiles/logo1-free-img.png"
+            }
             alt="brand logo"
             className="brand_logo"
           />
