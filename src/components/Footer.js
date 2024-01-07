@@ -1,7 +1,10 @@
 import React from "react";
 import { footerContent, footerList } from "../utils/content";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 export default function Footer() {
+  const navFooterData = useSelector((state) => state.apiSlice.navFooterData);
+  console.log(navFooterData, "navfooterdata");
   return (
     <footer>
       <div className="footer">
@@ -9,31 +12,40 @@ export default function Footer() {
       </div>
       <hr />
       <div className="footer mid_part">
-        <div className="brand_title">
-          <img
-            src="/imgfiles/logo@2x-free-img.png"
-            alt=""
-            className="brand_logo_02"
-          />
-          <h4>{footerContent.look}</h4>
+        <div className="footer_listing">
+          <h2> Categories</h2>
+          <ul>
+            {navFooterData &&
+              navFooterData[0].nav.pages_name.map((item, index) => {
+                const { page_category } = item;
+                return (
+                  <Link to={`${page_category}`} key={index}>
+                    <li className="cursor">{page_category}</li>
+                  </Link>
+                );
+              })}
+          </ul>
         </div>
-        {footerList.map((items, index) => {
-          const { heading, link, list } = items;
-          return (
-            <div key={index} className="footer_listing">
-              <h2> {heading}</h2>
-              <ul>
-                {list.map((item, id) => {
-                  return (
-                    <Link to={link} key={id}>
-                      <li className="cursor">{item.name}</li>
-                    </Link>
-                  );
-                })}
-              </ul>
-            </div>
-          );
-        })}
+
+        {navFooterData &&
+          navFooterData[0].footer.left_sec.map((item, index) => {
+            const { heading, sub_heading } = item;
+            return (
+              <div key={index} className="footer_listing">
+                <h2> {heading}</h2>
+                <ul>
+                  {sub_heading.map((item, id) => {
+                    const { link, name } = item;
+                    return (
+                      <Link to={link} key={id}>
+                        <li className="cursor">{name}</li>
+                      </Link>
+                    );
+                  })}
+                </ul>
+              </div>
+            );
+          })}
         <div className="subs">
           <h2>{footerContent.subs}</h2>
           <div className="inside_subs">

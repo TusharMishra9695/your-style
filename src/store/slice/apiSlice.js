@@ -9,7 +9,7 @@ export const fetchData = createAsyncThunk("fetchData", async () => {
 });
 export const fetchHomeData = createAsyncThunk("fetchHomeData", async () => {
   try {
-    const response = await axios.get(`http://localhost:5000/home`);
+    const response = await axios.get(`http://localhost:5000/nav-footer`);
     return response.data;
   } catch (error) {
     return error;
@@ -19,14 +19,14 @@ const apiSlice = createSlice({
   name: "apiSlice",
   initialState: {
     data: null,
-    homeData: null,
+    navFooterData: null,
   },
   extraReducers: (builder) => {
     builder.addCase(fetchData.fulfilled, (state, action) => {
       state.data = action.payload;
     });
     builder.addCase(fetchHomeData.fulfilled, (state, action) => {
-      state.homeData = action.payload;
+      state.navFooterData = action.payload;
     });
   },
 });

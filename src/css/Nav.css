@@ -1,0 +1,16 @@
+.nav_sub__category {
+  display: none;
+  position: absolute;
+  padding-top: 42px;
+}
+.nav_sub__category_dis div {
+  background-color: #090808;
+  width: 250px;
+  border-radius: 4px;
+  padding: 20px;
+}
+.nav_sub__category_dis {
+  display: block;
+  position: absolute;
+  padding-top: 42px;
+}

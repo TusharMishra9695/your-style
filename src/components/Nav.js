@@ -1,26 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { navContent } from "../utils/content";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import LoginModal from "./LoginModal";
 import SignupModal from "./SignupModal";
 import { RiUser3Fill } from "react-icons/ri";
 import "../css/Login.css";
+import "../css/Nav.css";
 import CartModal from "./CartModal";
 import { FaShoppingCart } from "react-icons/fa";
+import { fetchHomeData } from "../store/slice/apiSlice";
 
 export default function Nav(props) {
   const [showlog, setshowlog] = useState(false);
+  const [subCategory, setsubCategory] = useState({
+    id: null,
+  });
   const quantity = useSelector((state) => state.cartSlice.value.length);
+  const navFooterData = useSelector((state) => state.apiSlice.navFooterData);
+  const dispatch = useDispatch();
   const [openModal, setopenModal] = useState({
     login: false,
     signup: false,
     cart: false,
   });
+  useEffect(() => {
+    if (!navFooterData) {
+      console.log("enteres");
+      dispatch(fetchHomeData());
+    }
+  }, []);
   const handleClose = (e) => {
     setopenModal({ ...openModal, login: e, signup: e, cart: e });
   };
-  const { brand_logo } = props.homeData;
+  console.log(navFooterData);
   return (
     <div
       className={
@@ -36,9 +50,8 @@ export default function Nav(props) {
         (window.location.pathname === "/") ? (
           <img
             src={
-              brand_logo && brand_logo[0]
-                ? brand_logo[0]
-                : "/imgfiles/logo1-free-img.png"
+              (navFooterData && navFooterData[0].nav.brand_logo) ||
+              "/imgfiles/logo1-free-img.png"
             }
             alt="brand logo"
             className="brand_logo"
@@ -53,66 +66,57 @@ export default function Nav(props) {
       </Link>
 
       <ul className="CHILD1_P2_ul">
-        <li>
-          <Link
-            className={
-              window.location.pathname === "/everything"
-                ? "CHILD1_P2_D1_A nav_color_blue cursor"
-                : (window.location.pathname === "/home") |
-                  (window.location.pathname === "/")
-                ? "CHILD1_P2_D1_A nav_color_white cursor"
-                : "CHILD1_P2_D1_A nav_color_black cursor"
-            }
-            to="/everything"
-          >
-            {navContent.everything}
-          </Link>
-        </li>
-        <li>
-          <Link
-            className={
-              window.location.pathname === "/women"
-                ? "CHILD1_P2_D1_A nav_color_blue cursor"
-                : (window.location.pathname === "/home") |
-                  (window.location.pathname === "/")
-                ? "CHILD1_P2_D1_A nav_color_white cursor"
-                : "CHILD1_P2_D1_A nav_color_black cursor"
-            }
-            to="/women"
-          >
-            {navContent.women}
-          </Link>
-        </li>
-        <li>
-          <Link
-            className={
-              window.location.pathname === "/men"
-                ? "CHILD1_P2_D1_A nav_color_blue cursor"
-                : (window.location.pathname === "/home") |
-                  (window.location.pathname === "/")
-                ? "CHILD1_P2_D1_A nav_color_white cursor"
-                : "CHILD1_P2_D1_A nav_color_black cursor"
-            }
-            to="/men"
-          >
-            {navContent.men}
-          </Link>
-        </li>
-        <li>
-          <Link
-            className={
-              window.location.pathname === "/accessories"
-                ? "CHILD1_P2_D1_A nav_color_blue cursor"
-                : (window.location.pathname === "/home") |
-                  (window.location.pathname === "/")
-                ? "CHILD1_P2_D1_A nav_color_white cursor"
-                : "CHILD1_P2_D1_A nav_color_black cursor"
-            }
-            to="/accessories"
-          >
-            {navContent.accessories}
-          </Link>
-        </li>
+        {navFooterData &&
+          navFooterData[0].nav.pages_name.map((items, index) => {
+            const { category_logo, page_category, sub_categories } = items;
+            return (
+              <li key={index}>
+                <Link
+                  className={
+                    window.location.pathname === `/${page_category}`
+                      ? "CHILD1_P2_D1_A nav_color_blue cursor"
+                      : (window.location.pathname === "/home") |
+                        (window.location.pathname === "/")
+                      ? "CHILD1_P2_D1_A nav_color_white cursor"
+                      : "CHILD1_P2_D1_A nav_color_black cursor"
+                  }
+                  to="/everything"
+                  onMouseOver={() =>
+                    setsubCategory({
+                      ...subCategory,
+                      id: index,
+                    })
+                  }
+                  onMouseOut={() =>
+                    setsubCategory({
+                      ...subCategory,
+                      id: null,
+                    })
+                  }
+                >
+                  {page_category}
+                  <div
+                    className={
+                      subCategory.id == index
+                        ? "nav_sub__category_dis"
+                        : "nav_sub__category"
+                    }
+                  >
+                    <div>
+                      {sub_categories.map((sub_items, index) => {
+                        const { name } = sub_items;
+                        return (
+                          <Link key={index} to={`/${page_category}/${name}`}>
+                            <h4> {name}</h4>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </Link>
+              </li>
+            );
+          })}
       </ul>
       <ul className="CHILD1_P2_ul2">
         <li>
