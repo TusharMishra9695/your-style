@@ -10,9 +10,10 @@ export const fetchData = createAsyncThunk("fetchData", async () => {
 export const fetchHomeData = createAsyncThunk("fetchHomeData", async () => {
   try {
     const response = await axios.get(`http://localhost:5000/nav-footer`);
+    console.log(response.data, "data", response);
     return response.data;
   } catch (error) {
-    return error;
+    console.log("error", error);
   }
 });
 const apiSlice = createSlice({

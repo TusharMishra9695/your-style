@@ -34,35 +34,17 @@ export default function Nav(props) {
   const handleClose = (e) => {
     setopenModal({ ...openModal, login: e, signup: e, cart: e });
   };
-  console.log(navFooterData);
   return (
-    <div
-      className={
-        (window.location.pathname === "/home") |
-        (window.location.pathname === "/") |
-        (window.location.pathname === "/contact")
-          ? "child1_p2 child1_p2_bg_rgb"
-          : "child1_p2"
-      }
-    >
+    <div className={"child1_p2 child1_p2_bg_rgb"}>
       <Link to="/home">
-        {(window.location.pathname === "/home") |
-        (window.location.pathname === "/") ? (
-          <img
-            src={
-              (navFooterData && navFooterData[0].nav.brand_logo) ||
-              "/imgfiles/logo1-free-img.png"
-            }
-            alt="brand logo"
-            className="brand_logo"
-          />
-        ) : (
-          <img
-            src="/imgfiles/logo@2x-free-img.png"
-            alt="brand logo"
-            className="brand_logo"
-          />
-        )}
+        <img
+          src={
+            (navFooterData && navFooterData[0].nav.brand_logo) ||
+            "/imgfiles/logo1-free-img.png"
+          }
+          alt="brand logo"
+          className="brand_logo"
+        />
       </Link>
 
       <ul className="CHILD1_P2_ul">
@@ -72,14 +54,7 @@ export default function Nav(props) {
             return (
               <li key={index}>
                 <Link
-                  className={
-                    window.location.pathname === `/${page_category}`
-                      ? "CHILD1_P2_D1_A nav_color_blue cursor"
-                      : (window.location.pathname === "/home") |
-                        (window.location.pathname === "/")
-                      ? "CHILD1_P2_D1_A nav_color_white cursor"
-                      : "CHILD1_P2_D1_A nav_color_black cursor"
-                  }
+                  className={"CHILD1_P2_D1_A nav_color_white cursor"}
                   to="/everything"
                   onMouseOver={() =>
                     setsubCategory({
@@ -121,14 +96,7 @@ export default function Nav(props) {
       <ul className="CHILD1_P2_ul2">
         <li>
           <Link
-            className={
-              window.location.pathname === "/contact"
-                ? "CHILD2_P2_D1_A nav_color_blue cursor"
-                : (window.location.pathname === "/home") |
-                  (window.location.pathname === "/")
-                ? "CHILD2_P2_D1_A nav_color_white cursor"
-                : "CHILD2_P2_D1_A nav_color_black cursor"
-            }
+            className={"CHILD2_P2_D1_A nav_color_white cursor"}
             to="/contact"
           >
             {navContent.contact}
@@ -138,29 +106,14 @@ export default function Nav(props) {
           className="show_cart"
           onClick={() => setopenModal({ ...openModal, cart: true })}
         >
-          <Link
-            className={
-              window.location.pathname === "/price"
-                ? "CHILD2_P2_D1_A nav_color_blue cursor"
-                : (window.location.pathname === "/home") |
-                  (window.location.pathname === "/")
-                ? "CHILD2_P2_D1_A nav_color_white cursor"
-                : "CHILD2_P2_D1_A nav_color_black cursor"
-            }
-          >
+          <Link className={"CHILD2_P2_D1_A nav_color_white cursor"}>
             {navContent.price} <FaShoppingCart />{" "}
             {quantity == 0 ? null : quantity}
           </Link>
         </li>
         <li className="show_login">
           <RiUser3Fill
-            className={
-              (window.location.pathname === "/home") |
-              (window.location.pathname === "/") |
-              (window.location.pathname === "/contact")
-                ? "user_icon user_icon_white"
-                : "user_icon"
-            }
+            className={"user_icon user_icon_white"}
             onClick={() => setshowlog(true)}
           />
           <div className="home_p2_hover">

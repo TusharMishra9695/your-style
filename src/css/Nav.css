@@ -1,16 +1,26 @@
 .nav_sub__category {
   display: none;
-  position: absolute;
-  padding-top: 42px;
 }
 .nav_sub__category_dis div {
-  background-color: #090808;
-  width: 250px;
-  border-radius: 4px;
-  padding: 20px;
+  background-color: #f7f7f7;
+  width: 100%;
+  min-width: 250px;
+  border-radius: 8px;
+  padding: 10px 20px;
 }
 .nav_sub__category_dis {
   display: block;
   position: absolute;
-  padding-top: 42px;
+  padding-top: 43px;
+  z-index: 999;
+}
+.nav_sub__category_dis div a h4 {
+  color: rgba(0, 0, 0, 0.506);
+  text-transform: capitalize;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+.nav_sub__category_dis div a h4:hover {
+  color: #236a8e;
 }

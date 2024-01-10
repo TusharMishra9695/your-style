@@ -20,7 +20,7 @@ a {
 .common_inside {
   height: auto;
   background-color: #f5f7f9;
-  padding: 2rem 10rem;
+  padding: 5rem 2rem;
 }
 input {
   outline: none;
@@ -37,4 +37,10 @@ input::-webkit-inner-spin-button {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+select:focus {
+  outline: none;
+}
+.control-arrow {
+  display: none;
 }

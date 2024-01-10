@@ -4,6 +4,7 @@ import Product from "./Product";
 import "../css/TwoSection.css";
 import { fetchData } from "../store/slice/apiSlice";
 import { getAPI } from "../utils/apiCalls";
+import Pagination from "rc-pagination/lib/Pagination";
 
 export default function TwoSection() {
   const dispatch = useDispatch();
@@ -73,14 +74,12 @@ export default function TwoSection() {
         </div> */}
       </div>
       <div className="pro_listing_sec">
-        <div>
-          <h3 className="store_type">
-            {window.location.pathname.replace("/", "")} / Store
-          </h3>
-        </div>
         <div className="flex_sort__result">
           <div className="flex_sort__child1">
-            <p className="show_result">Showing 1-12 of 31 results</p>
+            <h3 className="store_type">
+              {window.location.pathname.replace("/", "")}
+            </h3>
+            <p className="show_result">(Showing 1-12 of 31 results)</p>
           </div>
           <div className="flex_sort__child2">
             <select name="sorting" id="sort" className="sort_select">
@@ -111,6 +110,7 @@ export default function TwoSection() {
             </div>
           </div>
         )}
+        {/* <Pagination total={25} /> */}
       </div>
     </div>
   );

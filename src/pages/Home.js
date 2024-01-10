@@ -51,41 +51,45 @@ export default function Home() {
             </Link>
           </div>
         </div> */}
-        <Carousel autoPlay>
+        <Carousel interval={1500} autoPlay infiniteLoop={true}>
           <div>
             <img
               alt=""
               src="https://your-style.vercel.app/static/media/home-new-bg-free-img.676c4ece681c03f7607b.jpg"
+              className="carousel_img"
             />
           </div>
           <div>
             <img
               alt=""
               src="https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg"
+              className="carousel_img"
             />
           </div>
           <div>
             <img
               alt=""
               src="https://your-style.vercel.app/static/media/home-new-bg-free-img.676c4ece681c03f7607b.jpg"
+              className="carousel_img"
             />
           </div>
           <div>
             <img
               alt=""
               src="https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg"
+              className="carousel_img"
             />
           </div>
         </Carousel>
       </div>
-      <div className="home_section1">
-        {/* {homeData[0] &&
+      {/* <div className="home_section1">
+        {homeData[0] &&
           homeData[0].mid_sec &&
           homeData[0].mid_sec.offers &&
           homeData[0].mid_sec.offers.map((item, index) => {
             return <HomeSection1 key={index} item={item} />;
-          })} */}
-      </div>
+          })}
+      </div> */}
       {!state ? null : (
         <div className="featured_products">
           <div className="inside_pro">

@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 export default function Footer() {
   const navFooterData = useSelector((state) => state.apiSlice.navFooterData);
-  console.log(navFooterData, "navfooterdata");
+  if (navFooterData) {
+    console.log("true");
+  } else {
+    console.log("false");
+  }
   return (
     <footer>
       <div className="footer">
