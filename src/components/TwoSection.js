@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Product from "./Product";
 import "../css/TwoSection.css";
+import "../css/Filter.css";
 import { fetchData } from "../store/slice/apiSlice";
 import { getAPI } from "../utils/apiCalls";
 import Pagination from "rc-pagination/lib/Pagination";
+import Filter from "./Filter";
 
 export default function TwoSection() {
   const dispatch = useDispatch();
@@ -35,8 +37,7 @@ export default function TwoSection() {
 
   return (
     <div className="two_sec">
-      <div className="filter_section">
-        <div className="search_sec">
+      {/* <div className="search_sec">
           <input
             type="search"
             name="search"
@@ -45,33 +46,9 @@ export default function TwoSection() {
             placeholder="Search products..."
           />
           <button className="btn_search">&gt;</button>
-        </div>
-        <div className="filter_Sec">
-          <p>Filter by Price</p>
-          <input type="range" name="range" id="ranges" />
-          <div>
-            <button>Filter</button>
-            <span> Price:$20 -- $290</span>
-          </div>
-        </div>
-        <div className="categories">
-          <p>Categories</p>
-          <div>
-            <h2>Jewellery</h2>
-            <span>(7)</span>
-          </div>
-          <div>
-            <h2>Women</h2>
-            <span>(7)</span>
-          </div>
-          <div>
-            <h2>Men</h2>
-            <span>(7)</span>
-          </div>
-        </div>
-        {/* <div>
-          <p>Our Best Sellers</p>
         </div> */}
+      <div className="filter">
+        <Filter />
       </div>
       <div className="pro_listing_sec">
         <div className="flex_sort__result">
