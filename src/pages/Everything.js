@@ -1,8 +1,8 @@
 import React from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import TwoSection from "../components/TwoSection";
-import TopReviewedProduct from "../components/TopReviewedProduct";
+import TwoSection from "../components/Products/TwoSection";
+import TopReviewedProduct from "../components/Products/TopReviewedProduct";
 
 export default function Everything() {
   window.scrollTo({ top: 0 });

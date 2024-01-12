@@ -12,7 +12,7 @@
 }
 .detail_sec02 {
   width: 100%;
-  max-width: 60rem;
+  max-width: 80rem;
   min-width: 25rem;
 }
 .detail_sec02 div:nth-child(1) {
@@ -108,18 +108,67 @@
   padding: 1rem 1rem;
 } */
 
-.design_review p:nth-child(1) {
+.prod_detail__check div input {
+  width: 90px;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+}
+.prod_detail__check div input::placeholder {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+.prod_detail__check div {
+  display: flex;
+  margin-bottom: 1rem;
+  padding: 0px !important;
+}
+.prod_detail__check div p {
   font-size: 1.6rem;
   font-weight: 400;
-  color: #333;
-  margin-bottom: 2.6rem;
+  color: #312f2f;
+  text-transform: capitalize;
+  margin-left: 5px;
+  cursor: pointer;
 }
-.design_review__box {
-  border: 1px solid #d7d6d6;
-  padding: 2.7rem;
+.prod_detail__check div p:hover {
+  color: #0084d6;
 }
-.design_review__box div:nth-child(1) h1 {
-  color: #333;
+.prod_detail__check h5 {
+  font-size: 1.6rem;
   font-weight: 400;
-  font-size: 2.2rem;
+  color: #212121;
+  text-transform: capitalize;
+}
+.prod_detail__check h5 span {
+  text-decoration: line-through;
+  color: #878787;
+}
+.prod_detail__check h6 {
+  font-size: 11px;
+  color: #212121;
+  font-weight: 400;
+}
+.prod_detail__offers {
+  padding: 1rem 0rem;
+}
+.prod_detail__offers p {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #212121;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+.prod_detail__offers h5 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #212121;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+.prod_detail__offers h5 span {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #878787;
+  text-transform: capitalize;
 }

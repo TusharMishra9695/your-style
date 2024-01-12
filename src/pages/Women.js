@@ -1,7 +1,7 @@
 import React from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import TwoSection from "../components/TwoSection";
+import TwoSection from "../components/Products/TwoSection";
 
 export default function Women() {
   window.scrollTo({ top: 0 });

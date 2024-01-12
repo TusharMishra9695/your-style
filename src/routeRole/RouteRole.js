@@ -7,8 +7,8 @@ import Men from "../pages/Men";
 import Accessories from "../pages/Accessories";
 import Cart from "../pages/Cart";
 import Contact from "../pages/Contact";
+import ProductDetail from "../pages/ProductDetail";
 import { ToastContainer } from "react-toastify";
-import ProductDetail from "../components/ProductDetail/ProductDetail";
 
 export default function RouteRole() {
   return (

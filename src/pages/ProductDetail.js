@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
-import Productdescrip from "./Productdescrip";
+import Productdescrip from "../components/ProductDetail/Productdescrip";
 import { useDispatch } from "react-redux";
-import Review from "./Review";
-import Nav from "../Nav";
+import Review from "../components/ProductDetail/Review";
+import Nav from "../components/Nav";
 import { Link } from "react-router-dom";
-import Footer from "../Footer";
-import { getParams } from "../../utils/logics";
+import Footer from "../components/Footer";
+import { getParams } from "../utils/logics";
 import { IoIosArrowForward } from "react-icons/io";
-import { getAPI } from "../../utils/apiCalls";
-import "../../css/ProductDetail.css";
-import { amounttoAdd } from "../../store/slice/addCart";
+import { getAPI } from "../utils/apiCalls";
+import "../css/ProductDetail.css";
+import { amounttoAdd } from "../store/slice/addCart";
 import { FaStar } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { GiPowerLightning } from "react-icons/gi";
+import TopReviewedProduct from "../components/Products/TopReviewedProduct";
 import { BiSolidOffer } from "react-icons/bi";
 export default function ProductDetail() {
   const Dispatch = useDispatch();
@@ -80,7 +81,12 @@ export default function ProductDetail() {
               </div>
               <div className="prod_detail__check">
                 <div>
-                  <input type="number" name="check_pincode" id="pincode" />
+                  <input
+                    type="number"
+                    name="check_pincode"
+                    id="pincode"
+                    placeholder="Enter Pincode"
+                  />
                   <p>check availability</p>
                 </div>
                 <h5>
@@ -94,7 +100,35 @@ export default function ProductDetail() {
                   <BiSolidOffer /> Bank offer{" "}
                   <span>
                     10% off on Bank of Baroda Credit Card EMI Txns, up to ₹2,000
-                    on orders of ₹10,000 and aboveT&C
+                    on orders of ₹10,000 and above T&C
+                  </span>
+                </h5>
+                <h5>
+                  <BiSolidOffer /> Bank offer{" "}
+                  <span>
+                    10% off on Bank of Baroda Credit Card EMI Txns, up to ₹2,000
+                    on orders of ₹10,000 and above T&C
+                  </span>
+                </h5>
+                <h5>
+                  <BiSolidOffer /> Bank offer{" "}
+                  <span>
+                    10% off on Bank of Baroda Credit Card EMI Txns, up to ₹2,000
+                    on orders of ₹10,000 and above T&C
+                  </span>
+                </h5>
+                <h5>
+                  <BiSolidOffer /> Bank offer{" "}
+                  <span>
+                    10% off on Bank of Baroda Credit Card EMI Txns, up to ₹2,000
+                    on orders of ₹10,000 and above T&C
+                  </span>
+                </h5>
+                <h5>
+                  <BiSolidOffer /> Bank offer{" "}
+                  <span>
+                    10% off on Bank of Baroda Credit Card EMI Txns, up to ₹2,000
+                    on orders of ₹10,000 and above T&C
                   </span>
                 </h5>
               </div>
@@ -120,9 +154,9 @@ export default function ProductDetail() {
                 >
                   <GiPowerLightning style={{ marginRight: "5px" }} /> Buy now
                 </button>
-                <Link to="/cart">Go to Cart</Link>
+                {/* <Link to="/cart">Go to Cart</Link> */}
               </div>
-              <div className="prod_seller__detail">
+              {/* <div className="prod_seller__detail">
                 <p>Seller</p>
                 <div>
                   <h4>Seller nam2</h4>
@@ -131,7 +165,7 @@ export default function ProductDetail() {
                     <li>10 day return policy</li>
                   </ul>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="detail_downside">
@@ -141,7 +175,7 @@ export default function ProductDetail() {
                   setShowSec({ ...showSec, descrip: false, review: true })
                 }
               >
-                Reviews (0)
+                Reviews & Ratings
               </span>
               <span
                 onClick={() =>
@@ -158,6 +192,7 @@ export default function ProductDetail() {
           {showSec.review ? <Review title={detail.title} /> : null}
         </div>
       )}
+      <TopReviewedProduct />
       <Footer />
     </div>
   );

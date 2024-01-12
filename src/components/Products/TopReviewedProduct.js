@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../css/TopReviewed.css";
+import "../../css/TopReviewed.css";
 import { FaStar } from "react-icons/fa";
 
 export default function TopReviewedProduct() {

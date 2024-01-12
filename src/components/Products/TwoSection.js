@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Product from "./Product";
-import "../css/TwoSection.css";
-import "../css/Filter.css";
-import { fetchData } from "../store/slice/apiSlice";
+import "../../css/TwoSection.css";
+import "../../css/Filter.css";
+import { fetchData } from "../../store/slice/apiSlice";
 import { Link } from "react-router-dom";
-import { getAPI } from "../utils/apiCalls";
+import { getAPI } from "../../utils/apiCalls";
 import Pagination from "rc-pagination/lib/Pagination";
 import Filter from "./Filter";
 import { IoIosArrowForward } from "react-icons/io";
-import { productContent } from "../utils/content";
+import { productContent } from "../../utils/content";
 
 export default function TwoSection() {
   const dispatch = useDispatch();
