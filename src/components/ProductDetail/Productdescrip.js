@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../../css/ProductDes.css";
 export default function Productdescrip(props) {
   return (
     <div className=" prod_descr">

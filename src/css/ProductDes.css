@@ -1,0 +1,19 @@
+.prod_descr div:nth-child(1) h1 {
+  font-size: 2.6rem;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 2rem;
+}
+
+.prod_descr div:nth-child(2) h2 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #333;
+  word-spacing: 0.5px;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+.prod_descr {
+  background-color: #fff;
+  padding: 2rem;
+}

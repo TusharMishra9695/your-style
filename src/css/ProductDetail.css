@@ -20,36 +20,47 @@
 }
 
 .detail_sec02 div:nth-child(2) p {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #878787;
+}
+.detail_sec02 div:nth-child(2) label {
   font-size: 2rem;
   font-weight: 400;
+  color: #212121;
 }
 .detail_sec02 div:nth-child(3) h1 {
-  font-size: 2.4rem;
+  padding-top: 1rem;
+  font-size: 2.5rem;
   font-weight: 600;
   color: #333;
 }
-.detail_sec02 div:nth-child(4) h2 {
+.detail_sec02 div:nth-child(3) h1 span {
+  color: #878787 !important;
+  margin: 0rem 1rem;
   font-size: 1.6rem;
   font-weight: 400;
-  color: #333;
-  width: 100%;
-  max-width: 50rem;
-  word-spacing: 0.5px;
-  letter-spacing: 1px;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+.detail_sec02 div:nth-child(3) h1 label {
+  display: inline;
+  color: #236a8e;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+.detail_sec02 div:nth-child(4) {
+  margin-top: 1rem;
 }
 
-.detail_sec02 div:nth-child(5) {
-  border-top: 1px solid #d7d6d6;
-  border-bottom: 1px solid #d7d6d6;
-  padding: 1.2rem 0rem;
-}
-.detail_sec02 div:nth-child(5) div {
+.detail_sec02 .detail_left__5 {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: 0px !important;
 }
-.detail_sec02 div:nth-child(5) div input {
+.detail_sec02 .detail_left__5 input {
   width: 59px;
   height: 35px;
   background-color: #fff;
@@ -58,9 +69,10 @@
   font-size: 1.6rem;
   padding-left: 20px;
 }
-.detail_sec02 div:nth-child(5) div button {
+.detail_sec02 .detail_left__5 button {
   width: 27.6rem;
-  height: 3.4rem;
+  height: 4rem;
+  border-radius: 2px;
   background-color: #0084d6;
   font-size: 1.5rem;
   color: #fff;
@@ -70,38 +82,32 @@
   font-weight: 500;
   text-transform: uppercase;
   cursor: pointer;
+  margin-right: 1rem;
 }
 .detail_downside {
-  border-top: 1px solid #d7d6d6;
+  margin-top: 1rem;
+  background-color: #fff;
+  border-bottom: 1px solid #d7d6d6;
 }
 .detail_downside div:nth-child(1) span {
+  display: inline-block;
+  padding: 1rem 2rem;
   font-size: 1.7rem;
   font-weight: 500;
-  color: #515151;
-  margin-right: 2rem;
+  color: #212121;
   cursor: pointer;
-}
-.detail_downside div:nth-child(1) {
-  padding: 0.8rem 0rem;
-  margin-bottom: 1.6rem;
-}
-.prod_descr div:nth-child(1) h1 {
-  font-size: 2.6rem;
-  font-weight: 500;
-  color: #000;
-  margin-bottom: 2rem;
-}
-.prod_descr {
-  padding-top: 4rem;
-}
-.prod_descr div:nth-child(2) h2 {
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: #333;
-  word-spacing: 0.5px;
+  text-transform: capitalize;
   letter-spacing: 1px;
-  margin-bottom: 2rem;
 }
+.detail_downside div:nth-child(1) span:hover {
+  background-color: #0084d6;
+  color: #fff;
+}
+
+/* .detail_downside div:nth-child(1) {
+  padding: 1rem 1rem;
+} */
+
 .design_review p:nth-child(1) {
   font-size: 1.6rem;
   font-weight: 400;

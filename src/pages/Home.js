@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Specialist from "../components/Specialist";
+import Specialist from "../components/Home/Specialist";
 import { specialist } from "../utils/content";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
