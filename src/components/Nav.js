@@ -95,11 +95,8 @@ export default function Nav(props) {
       </ul>
       <ul className="CHILD1_P2_ul2">
         <li>
-          <Link
-            className={"CHILD2_P2_D1_A nav_color_white cursor"}
-            to="/contact"
-          >
-            {navContent.contact}
+          <Link className={"CHILD2_P2_D1_A nav_color_white cursor"} to="/">
+            {/* Become a Seller */}
           </Link>
         </li>
         <li

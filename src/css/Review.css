@@ -1,0 +1,25 @@
+.review {
+  padding: 2rem 2rem;
+  background-color: #fff;
+}
+.review_sec01 {
+  display: flex;
+  gap: 5rem;
+}
+.rgt_review {
+  background-color: #0084d6;
+  width: 120px;
+  height: 35px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.extra_padding {
+  padding-top: 7px;
+}
