@@ -6,6 +6,7 @@ import Nav from "./Nav";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import { getParams } from "../utils/logics";
+import { IoIosArrowForward } from "react-icons/io";
 import { getAPI } from "../utils/apiCalls";
 import "../css/ProductDetail.css";
 import { amounttoAdd } from "../store/slice/addCart";
@@ -39,13 +40,16 @@ export default function ProductDetail() {
               <img src={detail.image} alt="product image" />
             </div>
             <div className="detail_sec02">
-              <div>
-                <span>
-                  {decodeURIComponent(window.location.pathname).replace(
-                    "/",
-                    ""
-                  )}
-                </span>
+              <div className="page_direction">
+                <Link to="/">
+                  <label className="page_direction__label">Home </label>
+                </Link>
+                <IoIosArrowForward className="page_direction__icon" />
+                <Link to={window.location.pathname} className="page_direction">
+                  <label className="page_direction__label">
+                    {detail.title}
+                  </label>
+                </Link>
               </div>
               <div>
                 <p>

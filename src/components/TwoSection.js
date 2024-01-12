@@ -4,9 +4,12 @@ import Product from "./Product";
 import "../css/TwoSection.css";
 import "../css/Filter.css";
 import { fetchData } from "../store/slice/apiSlice";
+import { Link } from "react-router-dom";
 import { getAPI } from "../utils/apiCalls";
 import Pagination from "rc-pagination/lib/Pagination";
 import Filter from "./Filter";
+import { IoIosArrowForward } from "react-icons/io";
+import { productContent } from "../utils/content";
 
 export default function TwoSection() {
   const dispatch = useDispatch();
@@ -33,6 +36,8 @@ export default function TwoSection() {
         setProduct(res);
       });
     }
+
+    console.log(window.location, "path");
   }, []);
 
   return (
@@ -51,6 +56,20 @@ export default function TwoSection() {
         <Filter />
       </div>
       <div className="pro_listing_sec">
+        <div className="page_up__flex">
+          <Link to="/" className="page_direction">
+            <label className="page_direction__label">Home </label>
+          </Link>
+          <IoIosArrowForward className="page_direction__icon" />
+          <Link to={window.location.pathname} className="page_direction">
+            <label className="page_direction__label">
+              {window.location.pathname.split("/")}
+            </label>
+          </Link>
+        </div>
+        <div className="page_description">
+          <label className="page_description__label">{productContent} </label>
+        </div>
         <div className="flex_sort__result">
           <div className="flex_sort__child1">
             <h3 className="store_type">

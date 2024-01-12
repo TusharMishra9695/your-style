@@ -1,0 +1,41 @@
+.deals_main {
+  padding: 2rem;
+  margin: 2rem;
+  background-color: #fff;
+}
+.heading_section {
+  text-transform: capitalize;
+  color: #212121;
+}
+.product_section img {
+  width: 100%;
+  min-width: 200px;
+  height: 20rem;
+}
+.product_section {
+  margin-top: 3rem;
+  border: 1px solid #d7d6d6;
+  padding: 1rem;
+  cursor: pointer;
+}
+.product_section__flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.top_deal__name {
+  margin-top: 1rem;
+  text-align: center;
+}
+.top_deal__name p {
+  font-size: 14px;
+  color: #212121;
+  font-weight: 400;
+  padding-bottom: 0.5rem;
+}
+.top_deal__name h2 {
+  font-size: 15px;
+  font-weight: 500;
+  color: #212121;
+}

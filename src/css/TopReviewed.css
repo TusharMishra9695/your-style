@@ -1,0 +1,32 @@
+.structure_top__review {
+  padding: 2rem 0rem;
+  background-color: #fff;
+  margin-top: 2rem;
+  border-radius: 4px;
+}
+.topreview_heading h1 {
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: 500;
+  color: #222;
+}
+.topreview_heading {
+  padding: 0rem 2rem 2rem;
+}
+.top_review_sec2_flex {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+.top_review__flex {
+  width: 33.33%;
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.extra_top_padding {
+  padding: 1rem 0rem;
+}
+.img_top__review {
+  width: 40%;
+}

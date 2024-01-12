@@ -2,6 +2,7 @@ import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
 import { GoHeart } from "react-icons/go";
+import { FaStar } from "react-icons/fa";
 import { GoHeartFill } from "react-icons/go";
 
 export default function Product(props) {
@@ -37,7 +38,10 @@ export default function Product(props) {
       <h2 className="cursor">{title}</h2>
       <h3>Brand Name</h3>
       <h4>
-        <span className="rating">4.8</span>(66)
+        <span className="rating">
+          4.8 <FaStar style={{ color: "white" }} />
+        </span>
+        (66)
       </h4>
       <span className="extra_prod">${Math.round(price)} </span>
       <span>${Math.round(price - (price * 10) / 100)}</span>

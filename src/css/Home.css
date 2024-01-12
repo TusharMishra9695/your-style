@@ -1,13 +1,7 @@
-.home_p2 {
-  /* background-image: url("../../public/imgfiles/home-new-bg-free-img.jpg");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 71.9rem;
-  background-attachment: fixed;
-  width: auto;
-  position: relative; */
+.home_p1 {
+  background-color: #f5f7f9;
 }
+
 .child1_p2 {
   width: 100%;
   height: 10.28rem;
@@ -211,51 +205,15 @@
   margin-right: 2rem;
   margin-bottom: 5rem;
 }
-.limited_edition {
-  padding: 5rem 7rem;
-  background-color: #f5f7f9;
-}
-.bg_img {
-  background-image: url("../../public/imgfiles/banner-03.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-}
-.inside_bg_img {
-  padding: 10rem 10rem;
-  width: 60%;
-}
-.inside_bg_img h2 {
-  margin-bottom: 1rem;
-  font-size: 4.2rem;
-  font-family: sans-serif;
-  font-weight: 600;
-  color: #fff;
-}
-.inside_bg_img p {
-  margin-bottom: 2rem;
-  font-size: 1.6rem;
-  font-family: sans-serif;
-  font-weight: 500;
-  color: #fff;
-}
-.inside_bg_img h4 {
-  font-size: 2rem;
-  font-family: sans-serif;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 2rem;
-}
+
 .specialist {
+  padding: 2rem;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  margin: 10.5rem 0rem 5rem;
 }
 .inside_specialist {
-  padding: 2rem;
   height: 20.5rem;
   width: 30rem;
   text-align: center;
