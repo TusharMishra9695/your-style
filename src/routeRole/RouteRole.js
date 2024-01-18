@@ -18,17 +18,19 @@ export default function RouteRole() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/everything" element={<Everything />} />
-          <Route path="/women" element={<Women />} />
-          <Route path="/men" element={<Men />} />
-          <Route path="/accessories" element={<Accessories />} />
+          <Route path="/women" element={<Everything />} />
+          <Route path="/men" element={<Everything />} />
+          <Route path="/kids" element={<Everything />} />
+          <Route path="/elders" element={<Everything />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/everything/:id" element={<ProductDetail />} />
           <Route path="/women/:id" element={<ProductDetail />} />
           <Route path="/men/:id" element={<ProductDetail />} />
-          <Route path="/accessories/:id" element={<ProductDetail />} />
+          <Route path="/kids/:id" element={<ProductDetail />} />
+          <Route path="/elders/:id" element={<ProductDetail />} />
           <Route path="/home/:id" element={<ProductDetail />} />
-          <Route path="//:id" element={<ProductDetail />} />
+          {/* <Route path="//:id" element={<ProductDetail />} /> */}
         </Routes>
       </BrowserRouter>
       <ToastContainer />

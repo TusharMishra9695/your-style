@@ -55,7 +55,7 @@ export default function Nav(props) {
               <li key={index}>
                 <Link
                   className={"CHILD1_P2_D1_A nav_color_white cursor"}
-                  to="/everything"
+                  to={`/${page_category}`}
                   onMouseOver={() =>
                     setsubCategory({
                       ...subCategory,
@@ -80,6 +80,7 @@ export default function Nav(props) {
                     <div>
                       {sub_categories.map((sub_items, index) => {
                         const { name } = sub_items;
+
                         return (
                           <Link key={index} to={`/${page_category}/${name}`}>
                             <h4> {name}</h4>

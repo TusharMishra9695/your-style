@@ -30,14 +30,15 @@ export default function Filter() {
   function handleFilter() {
     const url = `${process.env.REACT_APP_URL}/filters`;
     getAPI(url).then((res) => {
-      res.map((value) => {
-        value.list = value.list.map((inside, id) => ({
-          id: id,
-          checked: false,
-          value: inside,
-          name: value.heading,
-        }));
-      });
+      res &&
+        res.map((value) => {
+          value.list = value.list.map((inside, id) => ({
+            id: id,
+            checked: false,
+            value: inside,
+            name: value.heading,
+          }));
+        });
       setSelected(res);
     });
   }

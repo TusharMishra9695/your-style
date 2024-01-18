@@ -22,22 +22,18 @@ export default function TwoSection() {
         dispatch(fetchData());
       }
     } else {
-      let end_point;
-      if (window.location.pathname === "/men") {
-        end_point = "men's clothing";
-      } else if (window.location.pathname === "/women") {
-        end_point = "women's clothing";
-      } else {
-        end_point = "jewelery";
-      }
-      getAPI(
-        `${process.env.REACT_APP_BASE_URL}/products/category/${end_point}`
-      ).then((res) => {
+      // let end_point;
+      // if (window.location.pathname === "/men") {
+      //   end_point = "men's clothing";
+      // } else if (window.location.pathname === "/women") {
+      //   end_point = "women's clothing";
+      // } else {
+      //   end_point = "jewelery";
+      // }
+      getAPI(`${process.env.REACT_APP_BASE_URL}/products`).then((res) => {
         setProduct(res);
       });
     }
-
-    console.log(window.location, "path");
   }, []);
 
   return (
@@ -91,7 +87,7 @@ export default function TwoSection() {
           !state ? null : (
             <div className="common_pro__listing">
               <div className="product_img">
-                {state.slice(0, 9).map((item, index) => {
+                {state.map((item, index) => {
                   return <Product key={index} item={item} />;
                 })}
               </div>
@@ -100,7 +96,7 @@ export default function TwoSection() {
         ) : !product ? null : (
           <div className="common_pro__listing">
             <div className="product_img">
-              {product.slice(0, 9).map((item, index) => {
+              {product.map((item, index) => {
                 return <Product key={index} item={item} />;
               })}
             </div>

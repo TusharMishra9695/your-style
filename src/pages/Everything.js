@@ -13,7 +13,6 @@ export default function Everything() {
         <TwoSection />
         <TopReviewedProduct />
       </div>
-
       <Footer />
     </div>
   );
