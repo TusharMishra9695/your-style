@@ -37,7 +37,9 @@
 .filter hr {
   color: #b1acac;
 }
-
+hr:last-of-type {
+  display: none;
+}
 .price_select {
   display: flex;
   margin: 1rem 0rem 2rem;

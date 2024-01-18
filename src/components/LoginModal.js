@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { ImCross } from "react-icons/im";
+import { postAPI } from "../utils/apiCalls";
 
 export default function LoginModal(props) {
   const {
@@ -8,12 +9,17 @@ export default function LoginModal(props) {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  function handleLogin(formdata) {
+    postAPI(`${process.env.REACT_APP_URL}/login`, formdata);
+    props.isClose(false);
+  }
+
   return (
     <>
       {props.isOpen ? (
         <div className="overlay">
           <form
-            onSubmit={handleSubmit((data) => console.log(data))}
+            onSubmit={handleSubmit((data) => handleLogin(data))}
             className="login_modal"
           >
             <div className="cut">
@@ -21,10 +27,10 @@ export default function LoginModal(props) {
             </div>
             <div>
               <input
-                type="text"
-                id="username"
-                placeholder="Username"
-                {...register("username", { required: true })}
+                type="number"
+                id="contact"
+                placeholder="Mobile Number"
+                {...register("contact", { required: true })}
               />
             </div>
             <div>
