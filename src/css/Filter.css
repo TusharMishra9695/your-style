@@ -10,6 +10,7 @@
 .custom_select input {
   width: 15px;
   height: 15px;
+  cursor: pointer;
 }
 .custom_select {
   display: flex;
@@ -23,9 +24,10 @@
   font-weight: 500;
   color: #282727;
   margin-top: -2px;
+  text-transform: capitalize;
 }
 .filter h1 {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-size: 1.5rem;
   font-family: sans-serif;
   font-weight: 500;
@@ -58,5 +60,15 @@
   cursor: pointer;
 }
 .custom_select__div {
-  padding-top: 20px;
+  padding: 10px 0px;
+}
+.custome_select__hgt {
+  height: 100%;
+  max-height: 205px;
+  overflow: hidden;
+}
+.custome_select__hgt:hover {
+  height: 100%;
+  max-height: 220px;
+  overflow-y: auto;
 }
