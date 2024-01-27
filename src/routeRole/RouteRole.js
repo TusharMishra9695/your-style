@@ -2,11 +2,9 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Everything from "../pages/Everything";
-import Women from "../pages/Women";
-import Men from "../pages/Men";
-import Accessories from "../pages/Accessories";
 import Cart from "../pages/Cart";
 import Contact from "../pages/Contact";
+import Profile from "../pages/Profile";
 import ProductDetail from "../pages/ProductDetail";
 import { ToastContainer } from "react-toastify";
 
@@ -24,12 +22,18 @@ export default function RouteRole() {
           <Route path="/elders" element={<Everything />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/everything/:id" element={<ProductDetail />} />
-          <Route path="/women/:id" element={<ProductDetail />} />
-          <Route path="/men/:id" element={<ProductDetail />} />
-          <Route path="/kids/:id" element={<ProductDetail />} />
-          <Route path="/elders/:id" element={<ProductDetail />} />
-          <Route path="/home/:id" element={<ProductDetail />} />
+          <Route path="/info" element={<Profile />} />
+          <Route path="/everything/:id" element={<Everything />} />
+          <Route path="/women/:id" element={<Everything />} />
+          <Route path="/men/:id" element={<Everything />} />
+          <Route path="/kids/:id" element={<Everything />} />
+          <Route path="/elders/:id" element={<Everything />} />
+          <Route path="/women/:id/:id" element={<ProductDetail />} />
+          <Route path="/men/:id/:id" element={<ProductDetail />} />
+          <Route path="/everything/:id/:id" element={<ProductDetail />} />
+          <Route path="/kids/:id/:id" element={<ProductDetail />} />
+          <Route path="/elders/:id/:id" element={<ProductDetail />} />
+
           {/* <Route path="//:id" element={<ProductDetail />} /> */}
         </Routes>
       </BrowserRouter>

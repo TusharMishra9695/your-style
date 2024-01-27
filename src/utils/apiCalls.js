@@ -13,11 +13,9 @@ export async function getAPI(url) {
 export async function postAPI(url, formdata) {
   try {
     const response = await axios.post(url, formdata);
-    console.log(response, "kjskj");
     toast.success(response.data.message, { autoClose: 1000 });
-    return response.data.message;
+    return response.data;
   } catch (err) {
-    console.log("entered in err");
     toast.error(err.response && err.response, {
       autoClose: 1000,
     });

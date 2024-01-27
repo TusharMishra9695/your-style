@@ -34,6 +34,7 @@ export default function TwoSection() {
         setProduct(res);
       });
     }
+    console.log("everthing");
   }, []);
 
   return (

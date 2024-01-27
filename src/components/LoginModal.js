@@ -10,7 +10,9 @@ export default function LoginModal(props) {
     formState: { errors },
   } = useForm();
   function handleLogin(formdata) {
-    postAPI(`${process.env.REACT_APP_URL}/login`, formdata);
+    postAPI(`${process.env.REACT_APP_URL}/login`, formdata).then((res) => {
+      console.log(res, "loginres");
+    });
     props.isClose(false);
   }
 
